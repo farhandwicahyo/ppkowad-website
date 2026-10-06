@@ -1,0 +1,248 @@
+/* ===== HALAMAN TENTANG: layout bergaya company profile ===== */
+
+/* tepi bawah section gelap bertakik (datar di tengah); latar di balik takik = warna section Ketua Umum */
+.ab-dark-wrap{ background:var(--bg-soft); }
+
+.ab-dark-section{
+  padding:160px 24px 190px;
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 59% calc(100% - 90px), 46% calc(100% - 90px), 0 100%);
+  color:var(--white);
+  background:
+    radial-gradient(ellipse 50% 14% at 14% 22%, rgba(242,196,106,0.26) 0%, transparent 100%),
+    radial-gradient(ellipse 45% 14% at 90% 34%, rgba(242,196,106,0.2) 0%, transparent 100%),
+    radial-gradient(ellipse 50% 14% at 10% 62%, rgba(242,196,106,0.22) 0%, transparent 100%),
+    radial-gradient(ellipse 45% 12% at 88% 90%, rgba(242,196,106,0.2) 0%, transparent 100%),
+    #12120a;
+}
+.ab-dark-inner{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+
+.ab-dark-row{ display:flex; flex-direction:column; align-items:center; width:100%; max-width:760px; }
+.ab-dark-eyebrow{ font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(251,251,248,0.9); margin-bottom:10px; }
+.ab-grad{
+  font-size:clamp(28px, 3.4vw, 42px);
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:18px;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.ab-grad--visi{ background-image:linear-gradient(90deg, #F2C46A 0%, #E8A032 100%); }
+.ab-grad--misi{ background-image:linear-gradient(90deg, #E8A032 0%, #C77B22 100%); }
+.ab-dark-text{ max-width:560px; font-size:13.5px; line-height:1.85; color:rgba(251,251,248,0.92); }
+
+/* garis lengkung bercahaya di antara visi dan misi */
+.ab-arc{
+  width:92%;
+  height:56px;
+  margin:34px auto 30px;
+  border-top:1.5px solid rgba(242,196,106,0.85);
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow:0 -10px 28px rgba(242,196,106,0.22);
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+  mask-image:linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%);
+}
+
+/* kartu misi kecil bernomor */
+.ab-misi-cards{ margin-top:30px; width:100%; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; text-align:left; }
+.ab-misi-card{
+  padding:16px 14px 18px;
+  border:1px solid rgba(251,251,248,0.22);
+  border-radius:12px;
+  background:linear-gradient(180deg, #000 40%, rgba(184,137,43,0.55) 100%);
+}
+.ab-misi-card span{ display:block; font-size:22px; font-weight:800; line-height:1; color:var(--teal); margin-bottom:10px; }
+.ab-misi-card p{ font-size:12px; line-height:1.6; color:rgba(251,251,248,0.92); font-weight:600; }
+
+/* makna logo: judul gradasi besar + daftar berinisial emas bergaris pemisah */
+/* makna logo: judul di tengah atas, di bawahnya 2 kolom (kiri logo besar, kanan daftar) */
+.ab-dark-row.ab-logo-block{ max-width:1000px; margin-top:80px; text-align:left; }
+.ab-logo-title{ text-align:center; margin-bottom:48px; }
+.ab-logo-cols{
+  width:100%;
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1.5fr);
+  gap:56px;
+  align-items:center;
+}
+.ab-logo-side{ display:flex; justify-content:center; }
+.ab-logo-badge{ width:clamp(220px, 28vw, 320px); aspect-ratio:1; padding:22px; border-radius:50%; background:var(--white); display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 12px rgba(242,196,106,0.25); }
+.ab-logo-badge img{ width:100%; height:100%; object-fit:contain; }
+.ab-logo-eyebrow{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:rgba(251,251,248,0.85);
+  margin-bottom:6px;
+}
+.ab-logo-block h2{
+  font-size:clamp(34px, 4.6vw, 56px);
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:0.01em;
+  margin-bottom:0;
+  background:linear-gradient(90deg, var(--teal) 0%, var(--blue) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.ab-values-list{ width:100%; text-align:left; }
+.ab-value{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  padding:18px 0;
+  border-bottom:1px solid rgba(251,251,248,0.16);
+}
+.ab-value:first-child{ padding-top:0; }
+.ab-value-letter{ flex:0 0 34px; font-size:30px; font-weight:800; line-height:1; color:var(--teal); }
+.ab-value h4{ font-size:15.5px; font-weight:700; color:var(--white); margin-bottom:6px; }
+.ab-value p{ font-size:12.5px; line-height:1.65; color:rgba(251,251,248,0.8); }
+
+@media (max-width:560px){
+
+}
+
+@media (max-width:560px){
+  .ab-dark-section{ padding:64px 20px; }
+  .ab-logo-badge{ width:200px; padding:16px; }
+  .ab-misi-cards{ grid-template-columns:1fr; }
+}
+
+@media (max-width:820px){
+  .ab-logo-cols{ grid-template-columns:1fr; gap:36px; }
+  .ab-dark-section{ clip-path:polygon(0 0, 100% 0, 100% 100%, 59% calc(100% - 50px), 46% calc(100% - 50px), 0 100%); padding-bottom:130px; }
+}
+
+/* ===== tipografi disamakan dengan halaman Home ===== */
+/* judul */
+.about-page .page-hero h1,
+.about-page .ab-grad,
+.about-page .ab-logo-block h2,
+.about-page .board-title,
+.about-page .section-header h2{
+  font-size:clamp(22px, 2.4vw, 28px);
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:0;
+}
+/* tulisan kecil di atas judul */
+.about-page .ab-dark-eyebrow,
+.about-page .ab-logo-eyebrow,
+.about-page .page-hero .eyebrow,
+.about-page .section-header .eyebrow{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.04em;
+}
+/* paragraf */
+.about-page .page-hero p:not(.eyebrow),
+.about-page .ab-dark-text,
+.about-page .ab-value p,
+.about-page .ab-misi-card p,
+.about-page .section-header p{
+  font-size:13.5px;
+  line-height:1.8;
+}
+
+/* ===== Jejak Langkah: foto latar, atasnya memudar ke putih menyambung dengan section Ketua Umum ===== */
+.about-page .timeline-section{
+  background:
+    linear-gradient(180deg,
+      var(--white) 0%,
+      rgba(251,251,248,0.94) 14%,
+      rgba(251,251,248,0.8) 34%,
+      rgba(251,251,248,0.72) 100%),
+    url('/assets/DSC05478.jpg') center / cover no-repeat;
+}
+
+/* ===== Hero layar penuh (foto + nama besar di kiri atas, paragraf kecil di kanan bawah) ===== */
+.ab-hero2{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  position:relative;
+  padding:130px 6vw 56px;
+  color:var(--white);
+  background:
+    linear-gradient(120deg, rgba(51,50,26,0.92) 0%, rgba(110,109,60,0.82) 55%, rgba(51,50,26,0.75) 100%),
+    url('/assets/IMG_0001.JPEG') center / cover no-repeat;
+}
+.ab-hero2-eyebrow{ font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(251,251,248,0.85); margin-bottom:12px; }
+.ab-hero2 h1{
+  font-size:clamp(44px, 7vw, 92px);
+  font-weight:300;
+  letter-spacing:0.03em;
+  line-height:1.05;
+  text-transform:uppercase;
+}
+.ab-hero2-text{ align-self:flex-end; max-width:400px; font-size:13px; line-height:1.75; color:rgba(251,251,248,0.92); }
+
+@media (max-width:700px){
+  .ab-hero2{ padding:110px 24px 40px; }
+  .ab-hero2-text{ align-self:flex-start; max-width:none; }
+}
+
+/* sesi 1 -> sesi 2: dasar hero memudar ke warna section gelap di bawahnya */
+.ab-hero2::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:260px;
+  background:linear-gradient(180deg, rgba(18,18,10,0) 0%, rgba(18,18,10,0.35) 40%, rgba(18,18,10,0.8) 75%, #12120a 100%);
+  pointer-events:none;
+}
+.ab-hero2-top, .ab-hero2-text{ position:relative; z-index:1; }
+
+/* ===== Jejak Langkah: kartu timeline berwarna gelap agar teks jelas di atas foto ===== */
+.timeline-item .timeline-card{
+  height:100%;
+  padding:18px 20px 22px;
+  border-radius:14px;
+  background:linear-gradient(160deg, rgba(51,50,26,0.96) 0%, rgba(68,67,31,0.96) 100%);
+  box-shadow:0 14px 30px rgba(51,50,26,0.28);
+}
+.timeline-item .timeline-card .t-year{ color:var(--teal); }
+.timeline-item .timeline-card h4{ color:var(--white); }
+.timeline-item .timeline-card p:not(.t-year){ color:rgba(251,251,248,0.88); }
+
+/* garis & titik timeline dibuat tegas (gelap) agar terlihat di atas foto terang */
+.about-page .timeline-item::after{
+  height:3px;
+  top:4px;
+  background:var(--primary-deep);
+  border-radius:2px;
+}
+.about-page .timeline-item::before{
+  width:16px;
+  height:16px;
+  top:-2px;
+  background:var(--navy);
+  box-shadow:0 0 0 4px var(--teal), 0 0 0 6px rgba(51,50,26,0.35);
+}
+
+/* judul gradasi Visi & Misi dibuat lebih besar */
+.about-page .ab-grad{
+  font-size:clamp(32px, 4.8vw, 56px);
+  font-weight:800;
+  line-height:1.12;
+  margin-bottom:22px;
+}
+
+/* judul Visi satu baris panjang (boleh melebar melewati lebar paragraf, tetap di tengah) */
+.about-page .ab-grad--visi{ white-space:nowrap; }
+@media (max-width:700px){
+  .about-page .ab-grad{ font-size:5.2vw; }
+}

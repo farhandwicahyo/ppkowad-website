@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berita | PP KOWAD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="site-logo" href="index.html">
+      <span class="logo-mark">
+        <img src="assets/logo-ppkowad.png" alt="Logo PP KOWAD">
+      </span>
+      <span class="logo-text">PP KOWAD<small>SOLID &bull; KNOWLEDGE &bull; DEFENSE</small></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="services.html">Program Kami</a></li>
+      <li><a href="events.html">Agenda Acara</a></li>
+      <li><a href="news.html">Berita</a></li>
+      <li><a href="contact.html">Kontak</a></li>
+      <li class="nav-join-us"><a href="daftar.html">JOIN US</a></li>
+    </ul>
+    <a class="btn btn-teal" href="daftar.html">JOIN US</a>
+    <button class="mobile-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <p class="eyebrow">Sorotan Kegiatan</p>
+  <h1>PP KOWAD dalam Aksi</h1>
+  <p>Ikuti perkembangan, kegiatan, dan sorotan terbaru dari organisasi kami.</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a><span>/</span>Berita
+  </div>
+</section>
+
+<section class="section">
+  <div class="news-grid">
+    <a class="news-card news-card-link" href="#" data-news-modal="abuvulkanik">
+      <div class="news-thumb">
+        <img src="assets/PP KOWAD-abu-vulkanik/abu-vulkanik-cover-news (1).jpeg" alt="Dr. Tb Boy B. Ariffin: Abu Vulkanik Berpotensi Jadi Persoalan Hukum Lingkungan">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Hukum Lingkungan</span>
+        <h3>Dr. Tb Boy B. Ariffin: Abu Vulkanik Berpotensi Jadi Persoalan Hukum Lingkungan</h3>
+        <span class="news-date">25 Sep 2026</span>
+      </div>
+    </a>
+    <a class="news-card news-card-link" href="#" data-news-modal="karhutla">
+      <div class="news-thumb">
+        <img src="assets/alex-ginting.jpg" alt="Dr. Alexander Ginting: Karhutla Harus Dipandang sebagai Ancaman Kesehatan Masyarakat" class="thumb-face-top">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Kesehatan Masyarakat</span>
+        <h3>Dr. Alexander Ginting: Karhutla Harus Dipandang sebagai Ancaman Kesehatan Masyarakat</h3>
+        <span class="news-date">2 Sep 2026</span>
+      </div>
+    </a>
+    <a class="news-card news-card-link" href="#" data-news-modal="ntt">
+      <div class="news-thumb">
+        <img src="assets/PP KOWAD-peduli-ntt.jpeg" alt="PP KOWAD Peduli NTT">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Tanggap Darurat Bencana</span>
+        <h3>PP KOWAD Peduli NTT</h3>
+        <span class="news-date">25 Agu 2026</span>
+      </div>
+    </a>
+    <div class="news-card">
+      <div class="news-thumb">
+        <img src="assets/golf-PP KOWAD.jpeg" alt="Independence Day Golf Tournament">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Kegiatan</span>
+        <h3>Independence Day Golf Tournament</h3>
+        <span class="news-date">16 Agu 2026</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">
+        <img src="assets/IMG_9994.JPEG" alt="Musyawarah Nasional PERDOKMIL">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Sorotan</span>
+        <h3>Musyawarah Nasional PERDOKMIL</h3>
+        <span class="news-date">11 Jul 2026</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">
+        <img src="assets/IMG_9993.JPEG" alt="The 2nd International Military Medicine Symposium and Workshop 2025">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Simposium Internasional</span>
+        <h3>The 2nd International Military Medicine Symposium and Workshop 2025</h3>
+        <span class="news-date">22 Okt 2025</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">
+        <img src="assets/IMEDIC24.JPG" alt="The 1st International Military Medicine Symposium and Workshop 2024">
+      </div>
+      <div class="news-body">
+        <span class="news-tag">Simposium Internasional</span>
+        <h3>The 1st International Military Medicine Symposium and Workshop 2024</h3>
+        <span class="news-date">22 Okt 2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="news-modal-overlay" id="nttModalOverlay">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="nttModalTitle">
+    <button class="news-modal-close" id="nttModalClose" type="button" aria-label="Tutup">&times;</button>
+    <div class="news-modal-media">
+      <div class="news-modal-gallery">
+        <span class="news-modal-count" id="nttModalCount">01 / 10</span>
+        <div class="news-modal-slides" id="nttModalSlides">
+          <div class="news-modal-slide active" data-index="0">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-1.jpeg" alt="Pengemasan bantuan alat kesehatan PP KOWAD Peduli NTT">
+            <p class="news-modal-caption">Pengemasan akhir bantuan alat kesehatan bertanda &ldquo;Alkes &ndash; Jangan Dibanting&rdquo; sebelum diberangkatkan ke Nusa Tenggara Timur.</p>
+          </div>
+          <div class="news-modal-slide" data-index="1">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-2.jpeg" alt="Bantuan diturunkan dari kendaraan Dinas Kesehatan Kabupaten Sikka">
+            <p class="news-modal-caption">Bantuan diturunkan dari kendaraan operasional Dinas Kesehatan Daerah Kabupaten Sikka untuk diteruskan ke titik distribusi.</p>
+          </div>
+          <div class="news-modal-slide" data-index="2">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-3.jpeg" alt="Tim PP KOWAD disambut personel TNI di Nusa Tenggara Timur">
+            <p class="news-modal-caption">Tim PP KOWAD disambut personel TNI begitu tiba di Nusa Tenggara Timur.</p>
+          </div>
+          <div class="news-modal-slide" data-index="3">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-4.jpeg" alt="Tim relawan PP KOWAD dalam perjalanan menuju lokasi bakti sosial">
+            <p class="news-modal-caption">Momen kebersamaan tim relawan selama perjalanan menuju lokasi bakti sosial.</p>
+          </div>
+          <div class="news-modal-slide" data-index="4">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-5.jpeg" alt="Pesawat Hercules TNI Angkatan Udara mengangkut bantuan logistik">
+            <p class="news-modal-caption">Pesawat Hercules TNI Angkatan Udara mengangkut bantuan logistik kesehatan menuju NTT.</p>
+          </div>
+          <div class="news-modal-slide" data-index="5">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-6.jpeg" alt="Kekompakan tim PP KOWAD dan mitra TNI di lapangan udara">
+            <p class="news-modal-caption">Kekompakan tim PP KOWAD dan mitra TNI di lapangan udara, siap melanjutkan misi kemanusiaan.</p>
+          </div>
+          <div class="news-modal-slide" data-index="6">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-7.jpeg" alt="Paket bantuan kebutuhan pokok dan alat kesehatan sebelum dikirim ke NTT">
+            <p class="news-modal-caption">Paket bantuan berupa kebutuhan pokok dan alat kesehatan yang dikumpulkan sebelum dikirim ke NTT.</p>
+          </div>
+          <div class="news-modal-slide" data-index="7">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-8.jpeg" alt="Koordinasi bersama TNI di Gudang Perbekalan Angkatan">
+            <p class="news-modal-caption">Koordinasi bersama personel TNI di Gudang Perbekalan Angkatan sebelum bantuan dinaikkan ke pesawat.</p>
+          </div>
+          <div class="news-modal-slide" data-index="8">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-9.jpeg" alt="Bantuan alat kesehatan dikonsolidasikan di gudang logistik">
+            <p class="news-modal-caption">Bantuan alat kesehatan PP KOWAD dikonsolidasikan di gudang logistik, dipilah sesuai zona distribusi.</p>
+          </div>
+          <div class="news-modal-slide" data-index="9">
+            <img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-10.jpeg" alt="Barang bantuan siap diberangkatkan menuju Nusa Tenggara Timur">
+            <p class="news-modal-caption">Barang bantuan yang telah dikemas siap diberangkatkan dari gudang logistik menuju Nusa Tenggara Timur.</p>
+          </div>
+        </div>
+        <button class="news-modal-nav news-modal-prev" id="nttModalPrev" type="button" aria-label="Sebelumnya">&lsaquo;</button>
+        <button class="news-modal-nav news-modal-next" id="nttModalNext" type="button" aria-label="Berikutnya">&rsaquo;</button>
+      </div>
+      <div class="news-modal-thumbs" id="nttModalThumbs">
+        <button type="button" class="active" data-index="0"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-1.jpeg" alt=""></button>
+        <button type="button" data-index="1"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-2.jpeg" alt=""></button>
+        <button type="button" data-index="2"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-3.jpeg" alt=""></button>
+        <button type="button" data-index="3"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-4.jpeg" alt=""></button>
+        <button type="button" data-index="4"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-5.jpeg" alt=""></button>
+        <button type="button" data-index="5"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-6.jpeg" alt=""></button>
+        <button type="button" data-index="6"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-7.jpeg" alt=""></button>
+        <button type="button" data-index="7"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-8.jpeg" alt=""></button>
+        <button type="button" data-index="8"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-9.jpeg" alt=""></button>
+        <button type="button" data-index="9"><img src="assets/PP KOWAD-ntt/PP KOWAD-ntt-10.jpeg" alt=""></button>
+      </div>
+    </div>
+    <div class="news-modal-body">
+      <span class="news-tag">Tanggap Darurat Bencana</span>
+      <h3 id="nttModalTitle">PP KOWAD Kirim Tim Emergency Response MERP-DISASTER Bantu Korban Gempa di Kabupaten Sikka, NTT</h3>
+      <span class="news-date">25&ndash;26 Agustus 2026</span>
+      <p>PERSATUAN PURNAWIRAWAN KOWAD (PP KOWAD) mengirimkan tim Emergency Response melalui Divisi Medical Emergency Preparedness and Response&ndash;Disaster (MERP-DISASTER) untuk membantu masyarakat yang terdampak gempa bumi di Kabupaten Sikka, Nusa Tenggara Timur (NTT).</p>
+      <p>Misi kemanusiaan tersebut dilakukan dengan membawa sejumlah kebutuhan medis dan logistik untuk mendukung masyarakat serta fasilitas kesehatan di wilayah terdampak. Tim berangkat dari Lanud Halim Perdanakusuma, Jakarta, menuju Maumere dengan dukungan transportasi udara dari TNI Angkatan Udara.</p>
+      <p>Atas arahan Ketua Umum PP KOWAD, Dr. Dr. dr. Dian Andriani Ratna Dewi, SpDVE, MBiomed, MARS, SH, MH, FINSDV, FAADV, persiapan dilakukan dengan mengerahkan personel sekaligus mengumpulkan obat-obatan, alat kesehatan, kebutuhan logistik, tenda, panel surya, bahan makanan dan perlengkapan lainnya.</p>
+      <p>Tiga personel diterjunkan dalam misi tersebut, yakni dr. Renauld Koswiranagara, FIMMA selaku koordinator, Dr. dr. Tri Maharani, Sp.EM, FIMMA, Toxinologist, serta Kapten Kes dr. Dwi Fitri, FIMMA.</p>
+      <p>Tim membawa delapan koli bantuan dengan berat sekitar 100 kilogram. Mereka bertolak pada 25 Agustus 2026 dan tiba di Bandara Frans Seda, Maumere, sekitar pukul 09.30 WITA.</p>
+      <p>Setelah tiba di Maumere, tim langsung melakukan koordinasi dengan jajaran kesehatan TNI AU, Dinas Kesehatan, serta tenaga kesehatan di Kabupaten Sikka. Langkah tersebut dilakukan untuk memetakan kebutuhan dan menentukan lokasi yang menjadi prioritas penanganan.</p>
+      <p>Tim kemudian mendatangi sejumlah lokasi, di antaranya Pengungsian Nangahale, Puskesmas Watubaing, Puskesmas Boganatar, Puskesmas Waigete, RSUD TC Hillers, dan RS St. Gabriel Kewapante.</p>
+      <p>Selain mendistribusikan bantuan, PP KOWAD juga memberikan perhatian terhadap persoalan kesehatan yang muncul di lokasi pengungsian. Salah satunya terkait meningkatnya potensi interaksi warga dengan ular akibat perubahan lingkungan pascagempa.</p>
+      <p>Kondisi lingkungan yang berubah, keberadaan puing bangunan, terganggunya habitat ular, serta aktivitas warga di area terbuka menjadi sejumlah faktor yang perlu diantisipasi. Di Puskesmas Watubaing, tim juga menemukan adanya pasien pengungsi yang mengalami gigitan ular.</p>
+      <p>Dokter Tri Maharani kemudian memberikan edukasi kepada masyarakat dan pelatihan bagi tenaga kesehatan mengenai upaya pencegahan serta penanganan gigitan ular berbisa.</p>
+      <p>Bantuan yang disalurkan PP KOWAD mencakup antibisa ular, obat-obatan, alat kesehatan, High Flow Nasal Cannula (HFNC), panel surya, lampu tenaga surya, tenda, bahan makanan, pakaian dan kebutuhan sehari-hari lainnya.</p>
+      <p>Salah satu dukungan peralatan kesehatan juga diberikan kepada RSUD TC Hillers berupa HFNC. Bantuan tersebut diharapkan dapat menunjang pelayanan medis bagi masyarakat yang membutuhkan penanganan kesehatan pascagempa.</p>
+      <p>Ketua Umum PP KOWAD, Dian Andriani Ratna Dewi, melalui misi tersebut menegaskan komitmen organisasi dalam memperkuat ketahanan kesehatan, terutama dalam menghadapi situasi bencana dan kondisi kedaruratan medis.</p>
+      <p>Pelaksanaan misi melibatkan kolaborasi dengan berbagai pihak, termasuk TNI Angkatan Udara, Dinas Kesehatan, rumah sakit, puskesmas, tenaga kesehatan setempat, donatur dan masyarakat.</p>
+      <p>Kolaborasi tersebut menjadi bagian penting agar bantuan yang dikirim tidak hanya tiba di wilayah terdampak, tetapi juga dapat disesuaikan dengan kebutuhan masyarakat dan fasilitas kesehatan di lapangan.</p>
+      <p>Setelah menyelesaikan rangkaian kegiatan di Kabupaten Sikka dan Maumere, Tim Emergency Response PP KOWAD kembali ke Jakarta pada 26 Agustus 2026 dalam kondisi selamat.</p>
+      <p>Respons tersebut menjadi bagian dari upaya PP KOWAD dalam menjalankan peran kemanusiaan melalui kesiapsiagaan bencana, pelayanan kedaruratan medis, peningkatan kapasitas tenaga kesehatan dan kerja sama lintas sektor.</p>
+      <p class="news-modal-byline"></p>
+    </div>
+  </div>
+</div>
+
+<div class="news-modal-overlay" id="abuvulkanikModalOverlay">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="abuvulkanikModalTitle">
+    <button class="news-modal-close" type="button" aria-label="Tutup">&times;</button>
+    <div class="news-modal-media">
+      <div class="news-modal-gallery news-modal-gallery-single">
+        <img src="assets/PP KOWAD-abu-vulkanik/abu-vulkanik-cover-news (1).jpeg" alt="Dr. Tb Boy B. Ariffin, SH., MM., M.Sc." class="thumb-face-top">
+      </div>
+    </div>
+    <div class="news-modal-body">
+      <span class="news-tag">Hukum Lingkungan</span>
+      <h3 id="abuvulkanikModalTitle">Dr. Tb Boy B. Ariffin: Abu Vulkanik Berpotensi Jadi Persoalan Hukum Lingkungan</h3>
+      <span class="news-date">25 September 2026</span>
+      <p>Erupsi gunung api di Indonesia tidak hanya mengancam keselamatan jiwa, tetapi juga berpotensi menimbulkan persoalan hukum lingkungan melalui abu vulkanik yang dihasilkannya.</p>
+      <p>Pandangan tersebut disampaikan Dr. Tb Boy B. Ariffin, SH., MM., M.Sc., dalam kajian hukum lingkungan yang disusunnya mengenai dampak, tanggung jawab, dan perlindungan hukum atas abu vulkanik.</p>
+      <p>Menurut Boy, Indonesia berada di jalur &ldquo;Ring of Fire&rdquo; dengan 127 gunung api aktif, sehingga potensi erupsi dan sebaran abu vulkanik selalu menjadi risiko yang harus diantisipasi.</p>
+      <p>Ia menjelaskan, abu vulkanik merupakan material padat hasil erupsi berupa partikel halus berukuran kurang dari 2 milimeter yang mengandung silika, sulfur, dan logam berat.</p>
+      <p>&ldquo;Abu vulkanik dapat dikategorikan sebagai bencana alam sekaligus sumber pencemaran apabila pengelolaannya tidak tepat,&rdquo; ujar Boy, merujuk pada Undang-Undang Nomor 32 Tahun 2009 tentang Perlindungan dan Pengelolaan Lingkungan Hidup (UU PPLH).</p>
+      <p>Berdasarkan Pasal 1 angka 14 UU PPLH, lanjut Boy, abu vulkanik bahkan berpotensi masuk kategori bahan berbahaya dan beracun (B3) apabila kandungan zatnya dapat mencemari air, tanah, dan udara serta membahayakan kesehatan manusia.</p>
+      <p>Boy memetakan dampak abu vulkanik pada sejumlah komponen lingkungan. Dari sisi udara, sebaran abu dinilai dapat menurunkan kualitas udara ambien dan berpotensi melanggar baku mutu udara sebagaimana diatur dalam PP Nomor 22 Tahun 2021.</p>
+      <p>Pada komponen air, abu vulkanik disebut dapat menyebabkan pendangkalan sungai dan pencemaran sumber air minum, yang berpotensi memicu sengketa sumber daya air.</p>
+      <p>Sementara pada tanah, dampaknya dinilai bersifat dua sisi. Dalam jangka pendek, abu vulkanik dapat merusak tanaman, namun dalam jangka panjang berpotensi menyuburkan tanah. &ldquo;Kondisi ini tetap memerlukan kajian AMDAL yang memadai,&rdquo; kata Boy.</p>
+      <p>Dari sisi kesehatan, paparan abu vulkanik dinilai dapat memicu infeksi saluran pernapasan akut (ISPA) hingga iritasi mata. Boy menegaskan, penanganan dampak kesehatan tersebut merupakan tanggung jawab negara dalam memenuhi hak asasi manusia atas lingkungan hidup yang sehat sebagaimana diamanatkan Pasal 28H UUD 1945. Abu vulkanik, tambahnya, juga berpotensi merusak habitat dan keanekaragaman hayati di sekitar wilayah terdampak.</p>
+      <p>Terkait tanggung jawab hukum pascaerupsi, Boy menyebut terdapat tiga rezim yang berlaku. Pertama, tanggung jawab negara berdasarkan Pasal 65 UU PPLH, yang mewajibkan negara melakukan pemulihan lingkungan melalui BNPB, PVMBG, dan pemerintah daerah dalam menetapkan status bencana, evakuasi, dan rehabilitasi.</p>
+      <p>Kedua, tanggung jawab korporasi. Boy menjelaskan, apabila erupsi memicu kerusakan akibat aktivitas pertambangan atau pembangkit listrik tenaga panas bumi di kawasan rawan bencana, maka berlaku asas tanggung jawab mutlak atau strict liability sebagaimana diatur Pasal 88 UU PPLH.</p>
+      <p>Ketiga, tanggung jawab masyarakat. Menurut Boy, masyarakat memiliki kewajiban untuk tidak membuang abu vulkanik sembarangan ke sungai dan dapat dikenai sanksi administratif apabila tindakannya menyebabkan pencemaran lanjutan.</p>
+      <p>Di sisi lain, Boy menyoroti sejumlah celah hukum yang menurutnya masih perlu mendapat perhatian. Salah satunya, hingga saat ini belum ada baku mutu khusus untuk abu vulkanik di udara, sehingga acuan yang digunakan masih baku mutu PM2.5 dan PM10 secara umum.</p>
+      <p>Ia juga menyoroti persoalan ganti rugi bagi korban gagal panen akibat abu vulkanik, yang menurutnya kerap sulit dituntut karena dampaknya kerap dikategorikan sebagai bencana alam atau force majeure.</p>
+      <p>Persoalan lain yang disorot Boy adalah pengelolaan limbah abu vulkanik. Ia menilai penimbunan abu tanpa kajian yang memadai berpotensi mencemari air tanah, sementara standar operasional prosedur nasional untuk memanfaatkan abu vulkanik sebagai bahan bangunan disebut belum tersedia.</p>
+      <p>Boy menegaskan bahwa abu vulkanik pada dasarnya merupakan fenomena alam. Namun, dampaknya dapat berkembang menjadi persoalan hukum lingkungan apabila negara dan masyarakat gagal mengelolanya secara tepat.</p>
+      <p>&ldquo;Negara memiliki kewajiban konstitusional untuk melindungi warga dari dampak abu vulkanik sebagai bagian dari hak atas lingkungan hidup yang baik dan sehat,&rdquo; ujar Boy.</p>
+      <p>Berdasarkan kajian tersebut, Boy merekomendasikan sejumlah langkah. Pertama, mendesak pemerintah menyusun Peraturan Pemerintah tentang baku mutu abu vulkanik beserta standar operasional prosedur penanganannya.</p>
+      <p>Kedua, ia mendorong agar kajian dampak abu vulkanik diintegrasikan dalam setiap dokumen AMDAL untuk kawasan dalam radius 15 kilometer dari gunung api aktif.</p>
+      <p>Ketiga, Boy mendorong penguatan riset pemanfaatan abu vulkanik menjadi bahan bangunan ramah lingkungan sebagai bagian dari penerapan ekonomi sirkular.</p>
+      <p>Keempat, ia menekankan pentingnya penguatan peran bantuan hukum bagi petani dan nelayan yang terdampak, agar dapat menuntut pemulihan lingkungan secara lebih optimal.</p>
+      <p>Boy menutup kajiannya dengan menegaskan prinsip yang menurutnya perlu menjadi pegangan bersama. &ldquo;Bencana alam tidak dapat dicegah, tetapi dampak pencemaran akibat bencana wajib ditanggung dan dipulihkan oleh negara,&rdquo; katanya.</p>
+    </div>
+  </div>
+</div>
+
+<div class="news-modal-overlay" id="karhutlaModalOverlay">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="karhutlaModalTitle">
+    <button class="news-modal-close" id="karhutlaModalClose" type="button" aria-label="Tutup">&times;</button>
+    <div class="news-modal-media">
+      <div class="news-modal-gallery news-modal-gallery-single">
+        <img src="assets/alex-ginting.jpg" alt="Dr. Alexander Ginting" class="thumb-face-top">
+      </div>
+    </div>
+    <div class="news-modal-body">
+      <span class="news-tag">Kesehatan Masyarakat</span>
+      <h3 id="karhutlaModalTitle">Dr. Alexander Ginting: Karhutla Harus Dipandang sebagai Ancaman Kesehatan Masyarakat</h3>
+      <span class="news-date">2 September 2026</span>
+      <p>Kebakaran hutan dan lahan (Karhutla) tidak hanya menimbulkan kerusakan lingkungan, tetapi juga berpotensi memberikan dampak luas terhadap kesehatan masyarakat.</p>
+      <p>Asap yang dihasilkan dari kebakaran dapat menyebar jauh dari titik api dan meningkatkan risiko gangguan pernapasan bagi masyarakat.</p>
+      <p>Pandangan tersebut disampaikan Brigjen TNI (Purn.) dr. Alexander K. Ginting, Sp.P(K), FIMMA, dokter spesialis dan konsultan paru sekaligus salah satu Dewan Pakar PERSATUAN PURNAWIRAWAN KOWAD (PP KOWAD).</p>
+      <p>Menurut Alexander, penanganan Karhutla perlu ditempatkan dalam perspektif yang lebih luas. Keberhasilan memadamkan api tidak otomatis menghilangkan ancaman kesehatan karena paparan asap masih dapat berlangsung setelah kebakaran terkendali.</p>
+      <p>&ldquo;Ketika api padam, ancaman terhadap kesehatan belum tentu ikut padam,&rdquo; ujar Alexander.</p>
+      <p>Ia menjelaskan, asap Karhutla mengandung berbagai zat dan partikel yang dapat masuk ke sistem pernapasan. Salah satu yang perlu mendapat perhatian adalah partikulat halus PM2.5 karena ukurannya sangat kecil sehingga dapat mencapai bagian dalam saluran pernapasan.</p>
+      <p>Paparan asap dapat menyebabkan berbagai keluhan, seperti iritasi mata dan tenggorokan, batuk, berdahak, sesak napas hingga infeksi saluran pernapasan akut (ISPA).</p>
+      <p>Kondisi tersebut juga dapat memperburuk penyakit yang sebelumnya telah dialami, terutama asma dan penyakit paru obstruktif kronik (PPOK).</p>
+      <p>Selain partikulat, asap kebakaran juga dapat mengandung karbon monoksida dan sejumlah senyawa lainnya. Pada paparan tertentu, karbon monoksida dapat mengganggu kemampuan tubuh memperoleh oksigen.</p>
+      <p>Karena itu, Alexander menilai dampak Karhutla tidak cukup diukur dari luas lahan yang terbakar.</p>
+      <p>Jumlah masyarakat yang terpapar asap dan kapasitas sistem kesehatan dalam menghadapi dampak tersebut juga perlu menjadi perhatian.</p>
+      <p>Kelompok masyarakat tertentu memiliki risiko lebih tinggi ketika kualitas udara memburuk.</p>
+      <p>Mereka antara lain anak-anak, lanjut usia, ibu hamil, penderita asma, PPOK, penyakit jantung dan paru, serta masyarakat yang bekerja atau melakukan aktivitas di luar ruangan dalam waktu lama.</p>
+      <p>Alexander juga mengingatkan bahwa dampak asap tidak mengenal batas administratif.</p>
+      <p>Pergerakan angin dapat membawa asap dari lokasi kebakaran ke wilayah lain yang berjarak jauh. Kondisi tersebut membuat Karhutla menjadi persoalan yang membutuhkan penanganan lintas wilayah dan lintas sektor.</p>
+      <p>Dalam konteks Indonesia, Karhutla juga dipengaruhi oleh kombinasi faktor manusia dan kondisi lingkungan.</p>
+      <p>Aktivitas penggunaan api untuk membuka atau membersihkan lahan menjadi salah satu faktor yang dapat memicu kebakaran, sementara kemarau panjang dan kondisi lahan yang kering dapat membuat api lebih mudah meluas.</p>
+      <p>Kondisi lahan gambut menjadi perhatian khusus. Ketika gambut mengalami kekeringan, api dapat menjalar hingga lapisan bawah permukaan sehingga proses penanganannya menjadi lebih kompleks.</p>
+      <p>Pada 2026, persoalan Karhutla kembali menjadi perhatian seiring memasuki periode kemarau. Berdasarkan data yang dikutip dalam materi PP KOWAD, hingga 1 September 2026 Polri telah menetapkan 89 tersangka perorangan dari 189 laporan terkait dugaan Karhutla.</p>
+      <p>Alexander menilai masyarakat juga perlu menjadikan informasi kualitas udara sebagai salah satu pertimbangan sebelum melakukan aktivitas di luar rumah.</p>
+      <p>Air Quality Index (AQI) dapat digunakan untuk mengetahui kondisi udara dan menentukan langkah perlindungan yang diperlukan.</p>
+      <p>Ketika kualitas udara memburuk, masyarakat disarankan mengurangi aktivitas di luar ruangan, terutama aktivitas fisik berat. Jika harus keluar rumah, penggunaan masker yang sesuai dapat membantu mengurangi paparan partikulat.</p>
+      <p>Paparan asap di dalam rumah juga dapat ditekan dengan menutup pintu dan jendela serta mengurangi celah masuknya udara dari luar. Penggunaan air purifier dengan filter HEPA juga dapat membantu menyaring partikulat halus di dalam ruangan.</p>
+      <p>Masyarakat perlu segera mencari pertolongan medis apabila mengalami sesak napas, batuk yang semakin berat, mengi, nyeri dada atau gangguan pernapasan yang tidak kunjung membaik.</p>
+      <p>Sebagai Dewan Pakar PP KOWAD, Alexander melihat penanganan Karhutla dari sisi kesiapan kesehatan, khususnya perlindungan respirasi dan ketahanan sistem pelayanan kesehatan.</p>
+      <p>Kesiapsiagaan tersebut mencakup pemetaan kelompok rentan, edukasi masyarakat, pemantauan gangguan pernapasan, surveilans kesehatan, hingga kesiapan fasilitas pelayanan kesehatan.</p>
+      <p>Menurutnya, peningkatan paparan asap dalam skala luas berpotensi meningkatkan jumlah masyarakat yang membutuhkan pelayanan medis secara bersamaan.</p>
+      <p>Situasi tersebut dapat memberikan tekanan terhadap puskesmas, rumah sakit, tenaga kesehatan, obat-obatan, hingga sistem rujukan. Karena itu, penanganan Karhutla membutuhkan kerja sama berbagai unsur.</p>
+      <p>Upaya tersebut tidak hanya berkaitan dengan pemadaman api, tetapi juga pencegahan, pemantauan kualitas udara, perlindungan masyarakat, pelayanan kesehatan dan pemulihan pascabencana.</p>
+      <p>PP KOWAD menilai Karhutla menjadi contoh bahwa ancaman terhadap ketahanan kesehatan nasional tidak selalu berupa wabah penyakit.</p>
+      <p>Kerusakan lingkungan dapat berkembang menjadi kedaruratan kesehatan ketika paparan asap menjangkau masyarakat dalam jumlah besar.</p>
+      <p>Alexander mengingatkan masyarakat agar tidak menunggu munculnya gangguan pernapasan untuk mulai memperhatikan kualitas udara.</p>
+      <p>Menurutnya, mengenali kondisi udara, melindungi kelompok rentan, mengurangi paparan asap dan segera mencari pertolongan ketika muncul gejala merupakan bagian dari kesiapsiagaan menghadapi Karhutla.</p>
+    </div>
+  </div>
+</div>
+
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <div>
+      <h3>Ingin Terlibat Langsung dalam Kegiatan Kami?</h3>
+      <p>Bergabunglah sebagai anggota dan ikuti setiap perkembangan kami.</p>
+    </div>
+    <a class="btn btn-white" href="daftar.html">JOIN US &rarr;</a>
+    <span class="cta-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></span>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="site-logo" href="index.html">
+        <span class="logo-mark">
+          <img src="assets/logo-ppkowad.png" alt="Logo PP KOWAD">
+        </span>
+        <span class="logo-text">PP KOWAD</span>
+      </a>
+      <p>PERSATUAN PURNAWIRAWAN KOWAD untuk belajar, berkolaborasi, dan berkontribusi bagi dunia kesehatan.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.5 1.6-1.5h1.6V3.3C16.4 3.2 15.3 3 14 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.6V21h3.9Z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7.3 9.6L4.4 20h2l6-6.7L17 20h4l-7.6-10 6.6-7.4h-2l-5.5 6.1L8 4H4Z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.9 3.5A1.6 1.6 0 1 1 3.3 5a1.6 1.6 0 0 1 1.6-1.5ZM3.6 8.6h2.6V21H3.6V8.6ZM9.3 8.6h2.5v1.7h.03c.35-.66 1.2-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.8V21H16v-5.6c0-1.35-.02-3.1-1.9-3.1-1.9 0-2.2 1.47-2.2 3v5.7H9.3V8.6Z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.9" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Tautan Cepat</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Tentang Kami</a></li>
+        <li><a href="services.html">Program Kami</a></li>
+        <li><a href="events.html">Agenda Acara</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Program</h4>
+      <ul>
+        <li><a href="services.html">Pendidikan &amp; Forum Ilmiah</a></li>
+        <li><a href="services.html">Pelatihan &amp; Pengembangan Kapasitas</a></li>
+        <li><a href="services.html">Kolaborasi Strategis</a></li>
+        <li><a href="services.html">Pengabdian Masyarakat</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Bantuan</h4>
+      <ul>
+        <li><a href="contact.html">FAQ</a></li>
+        <li><a href="contact.html">Hubungi Kami</a></li>
+        <li><a href="daftar.html">JOIN US</a></li>
+        <li><a href="news.html">Berita</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <ul class="footer-contact">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Jl Percetakan Negara XI No. 38 RT 07/RW 04, Kel. Rawasari, Cempaka Putih, Jakarta Pusat 10510</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L7.1 8.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z"/></svg><span>+62 851-7783-8869</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>PP KOWAD@gmail.com</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 PP KOWAD. Seluruh hak cipta dilindungi.
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
