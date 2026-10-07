@@ -7,7 +7,6 @@ import About from './pages/About.jsx';
 import Events from './pages/Events.jsx';
 import News from './pages/News.jsx';
 import Contact from './pages/Contact.jsx';
-import Daftar from './pages/Daftar.jsx';
 
 const TITLES = {
   '/': 'Beranda',
@@ -15,7 +14,6 @@ const TITLES = {
   '/events': 'Agenda Acara',
   '/news': 'Berita',
   '/contact': 'Kontak',
-  '/daftar': 'Pendaftaran Segera Ditutup',
 };
 
 export default function App() {
@@ -39,7 +37,6 @@ export default function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/news" element={<News />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/daftar" element={<Daftar />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />

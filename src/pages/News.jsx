@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 import PageHero from '../components/PageHero.jsx';
-import CtaBanner from '../components/CtaBanner.jsx';
 import { ARTICLES } from '../data/articles.js';
 import { NEWS } from '../data/news.js';
 
@@ -128,12 +127,6 @@ export default function News() {
       </section>
 
       {openId && <NewsModal key={openId} article={ARTICLES[openId]} onClose={close} />}
-
-      <CtaBanner
-        title="Ingin Terlibat Langsung dalam Kegiatan Kami?"
-        text="Bergabunglah sebagai anggota dan ikuti setiap perkembangan kami."
-        withIcon
-      />
     </>
   );
 }

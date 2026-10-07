@@ -1,4 +1,3 @@
-import CtaBanner from '../components/CtaBanner.jsx';
 import BoardSection from '../components/BoardSection.jsx';
 
 const LOGO_MEANING = [
@@ -138,8 +137,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <CtaBanner />
     </div>
   );
 }

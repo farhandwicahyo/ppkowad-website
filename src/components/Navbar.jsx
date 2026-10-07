@@ -39,11 +39,7 @@ export default function Navbar() {
               <NavLink to={l.to} end onClick={close} className={activeClass}>{l.label}</NavLink>
             </li>
           ))}
-          <li className="nav-join-us">
-            <NavLink to="/daftar" onClick={close} className={activeClass}>JOIN US</NavLink>
-          </li>
         </ul>
-        {/* <Link className="btn btn-teal" to="/daftar">JOIN US</Link> */}
         <button className="mobile-toggle" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
           <span></span><span></span><span></span>
         </button>

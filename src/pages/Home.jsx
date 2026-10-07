@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CtaBanner from '../components/CtaBanner.jsx';
 import ProgramTiles from '../components/ProgramTiles.jsx';
 import AboutBanner from '../components/AboutBanner.jsx';
 import InfoBlock from '../components/InfoBlock.jsx';
@@ -65,36 +64,33 @@ export default function Home() {
             <h1>Bersinergi Membangun Ketahanan Kesehatan Indonesia yang Lebih <span className="accent">Tangguh.</span></h1>
             <p className="desc" style={{ textAlign: 'justify' }}>Menjadi organisasi PERSATUAN PURNAWIRAWAN KOWAD yang solid dan bermitra strategis dengan pemerintah dalam membangun serta memperkuat ketahanan kesehatan nasional melalui penerapan ilmu kedokteran militer dan kolaborasi militer-sipil.</p>
             <div className="hero-actions">
-              <a className="btn btn-outline" href="#program">Lihat Program Kami</a>
-              <Link className="btn btn-teal" to="/daftar">Gabung Sekarang</Link>
+              <a className="btn btn-teal" href="#program">Tentang Kami</a>
             </div>
           </div>
         </div>
       </section>
 
       <InfoBlock
-        eyebrow="Tentang PP KOWAD"
         title="Wadah Purnawirawan KOWAD di Seluruh Indonesia"
         text="Persatuan Purnawirawan KOWAD menghimpun purnawirawan Korps Wanita Angkatan Darat dalam semangat kebersamaan. Terdaftar sebagai ormas di Kemendagri sejak 2017 dan resmi berbadan hukum sejak 10 Mei 2025."
         cta={{ label: 'Perjalanan Kami', to: '/about' }}
         stats={[
-          { label: 'Berdiri', value: '2014', caption: 'Hari lahir PP-KOWAD pada 20 September 2014.' },
-          { label: 'Wilayah (2024)', value: '16', caption: 'Wilayah PP-KOWAD di seluruh Indonesia.' },
-          { label: 'Anggota (2026)', value: '1.123', caption: 'Total anggota tercatat pada tahun 2026.' },
+          { label: 'Berdiri', value: '2014'},
+          { label: 'Wilayah (2024)', value: '16'},
+          { label: 'Anggota (2026)', value: '1.123'},
         ]}
       />
 
       <AboutBanner />
 
       <InfoBlock
-        eyebrow="Program Kami"
         title="Empat Pilar Program PP KOWAD"
         text="Pendidikan dan forum ilmiah, pelatihan dan pengembangan kapasitas, kolaborasi strategis, serta pengabdian masyarakat untuk memperkuat peran purnawirawan bagi masyarakat."
         cta={{ label: 'Lihat Agenda', to: '/events' }}
         stats={[
-          { label: 'Program Strategis', value: '4', caption: 'Pilar program yang dijalankan organisasi.' },
-          { label: 'Ketua Umum (2014 - 2030)', value: '3', caption: 'Periode kepemimpinan sejak organisasi berdiri.' },
-          { label: 'Federasi Kowani (2024)', value: '111', caption: 'Nomor urut keanggotaan, resmi sejak 23 Oktober 2024.' },
+          { label: 'Program Strategis', value: '4'},
+          { label: 'Ketua Umum (2014 - 2030)', value: '3' },
+          { label: 'Federasi Kowani (2024)', value: '111' },
         ]}
       />
 
@@ -118,8 +114,6 @@ export default function Home() {
           <Highlights />
         </div>
       </section>
-
-      <CtaBanner />
     </div>
   );
 }

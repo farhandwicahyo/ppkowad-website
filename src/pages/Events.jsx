@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero.jsx';
-import CtaBanner from '../components/CtaBanner.jsx';
 
 const EVENTS = [
   { start: '2024-10-22', end: '2024-10-24', title: 'iMEDIC I 2024', tag: 'Simposium Internasional', desc: 'Simposium dan Workshop Kedokteran Militer Internasional pertama, mempertemukan pakar kesehatan militer dari berbagai negara.' },
@@ -78,7 +77,7 @@ export default function Events() {
       <PageHero
         eyebrow="Agenda Acara"
         title="Rangkaian Kegiatan Kami"
-        text="Jangan lewatkan seminar, pelatihan, dan acara tahunan kami. Amankan tempatmu sebelum pendaftaran ditutup."
+        text="Jangan lewatkan seminar, pelatihan, dan acara tahunan kami."
         crumb="Agenda Acara"
       />
 
@@ -129,8 +128,6 @@ export default function Events() {
           </div>
         </div>
       </section>
-
-      <CtaBanner />
     </>
   );
 }

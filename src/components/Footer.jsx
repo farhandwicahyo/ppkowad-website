@@ -47,7 +47,6 @@ export default function Footer() {
           <ul>
             <li><Link to="/contact">FAQ</Link></li>
             <li><Link to="/contact">Hubungi Kami</Link></li>
-            <li><Link to="/daftar">JOIN US</Link></li>
             <li><Link to="/news">Berita</Link></li>
           </ul>
         </div>
