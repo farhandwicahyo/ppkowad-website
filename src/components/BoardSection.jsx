@@ -5,7 +5,7 @@ const KETUA_UMUM = [
   { img: 'dian-andriani.png', period: '2026 - 2030', rank: 'Mayjen TNI (K) Purn', name: 'Dr. dr. Dian Andriani Ratna Dewi', credentials: 'Sp.KK, M.Biomed, M.A.R.S., FINSDV, FAADV', current: true },
 ];
 
-export default function BoardSection() {
+export default function BoardSection({ children }) {
   return (
       <section className="board-section" id="jajaran">
         <h2 className="board-title">Ketua Umum dari <span className="accent">Masa ke Masa</span></h2>
@@ -26,6 +26,7 @@ export default function BoardSection() {
             </article>
           ))}
         </div>
+        {children}
       </section>
   );
 }

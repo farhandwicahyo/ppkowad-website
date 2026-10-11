@@ -1,0 +1,97 @@
+/* ===== TIPOGRAFI SERAGAM: mengikuti skala di halaman Home (font Plus Jakarta Sans) ===== */
+:root{
+  --fs-hero:clamp(30px, 4vw, 46px);   /* judul hero, seperti hero Home */
+  --fs-title:clamp(22px, 2.4vw, 28px); /* judul section, seperti "Wadah Purnawirawan KOWAD..." */
+  --fs-eyebrow:11px;                   /* tulisan kecil di atas judul */
+  --fs-body:14px;                      /* paragraf */
+}
+
+button, input, textarea, select{ font-family:inherit; }
+
+/* judul hero di semua halaman */
+.page-hero h1,
+.ab-hero2 h1,
+.pg2-title-phj,
+.pg2-hero .pg2-title-phj{
+  font-size:var(--fs-hero);
+  font-weight:800;
+  line-height:1.15;
+  letter-spacing:0;
+  text-transform:none;
+}
+.pg2-statement,
+.pg2-hero .pg2-statement{
+  font-size:clamp(20px, 2.4vw, 28px);
+  font-weight:600;
+  line-height:1.5;
+  letter-spacing:0;
+}
+
+/* tulisan kecil di atas judul */
+.eyebrow,
+.page-hero .eyebrow,
+.ab-hero2-eyebrow,
+.pg2-eyebrow,
+.info-block-eyebrow,
+.ab-logo-eyebrow,
+.ab-dark-eyebrow{
+  font-size:var(--fs-eyebrow);
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+}
+
+/* judul section */
+.info-block h2,
+.hl-head h2,
+.section-header h2,
+.board-title,
+.about-page .ab-logo-block h2,
+.pg2-nav h2,
+.pg3-years h2,
+.pg4-top h2,
+.pg5-aside h2,
+.pg2-cta h2,
+.pg2-panel h3,
+.ab-values-list + h2{
+  font-size:var(--fs-title);
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:0;
+}
+
+/* angka besar & kata tampilan: berat huruf disamakan dengan angka statistik di Home (400) */
+.pg4-range,
+.pg5-range,
+.pg3-years li strong,
+.ab-phj-item h4,
+.pg5-num{
+  font-weight:400;
+  letter-spacing:0;
+}
+
+/* paragraf */
+.page-hero > p:not(.eyebrow),
+.ab-hero2-text,
+.pg2-lead,
+.pg2-panel p,
+.pg5-stages p,
+.pg5-goal,
+.pg4-goal,
+.pg3-years li p,
+.pg2-cta p,
+.ab-dark-text,
+.ab-phj-item p,
+.ab-value p{
+  font-size:var(--fs-body);
+  line-height:1.8;
+}
+
+/* teks rata kanan-kiri (justify) */
+.home-page .home-hero .desc,        /* 1. paragraf hero Home */
+.info-block-text,                   /* 2-5. paragraf blok teks & header Berita di Home */
+.pc-card p,                         /* 6. carousel di Home */
+.ab-hero2-text,                     /* 7. paragraf hero Tentang Kami */
+.about-page .timeline-item .timeline-card p{ /* 8. carousel (timeline) di Tentang Kami */
+  text-align:justify;
+}

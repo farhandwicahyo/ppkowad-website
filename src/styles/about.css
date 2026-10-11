@@ -162,7 +162,7 @@
       rgba(251,251,248,0.94) 14%,
       rgba(251,251,248,0.8) 34%,
       rgba(251,251,248,0.72) 100%),
-    url('/assets/DSC05478.jpg') center / cover no-repeat;
+    url('/assets/hut-ballroom.jpg') center / cover no-repeat;
 }
 
 /* ===== Hero layar penuh (foto + nama besar di kiri atas, paragraf kecil di kanan bawah) ===== */
@@ -176,7 +176,7 @@
   color:var(--white);
   background:
     linear-gradient(120deg, rgba(51,50,26,0.92) 0%, rgba(110,109,60,0.82) 55%, rgba(51,50,26,0.75) 100%),
-    url('/assets/IMG_0001.JPEG') center / cover no-repeat;
+    url('/assets/hut-stage.jpg') center / cover no-repeat;
 }
 .ab-hero2-eyebrow{ font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(251,251,248,0.85); margin-bottom:12px; }
 .ab-hero2 h1{
@@ -206,33 +206,6 @@
 }
 .ab-hero2-top, .ab-hero2-text{ position:relative; z-index:1; }
 
-/* ===== Jejak Langkah: kartu timeline berwarna gelap agar teks jelas di atas foto ===== */
-.timeline-item .timeline-card{
-  height:100%;
-  padding:18px 20px 22px;
-  border-radius:14px;
-  background:linear-gradient(160deg, rgba(51,50,26,0.96) 0%, rgba(68,67,31,0.96) 100%);
-  box-shadow:0 14px 30px rgba(51,50,26,0.28);
-}
-.timeline-item .timeline-card .t-year{ color:var(--teal); }
-.timeline-item .timeline-card h4{ color:var(--white); }
-.timeline-item .timeline-card p:not(.t-year){ color:rgba(251,251,248,0.88); }
-
-/* garis & titik timeline dibuat tegas (gelap) agar terlihat di atas foto terang */
-.about-page .timeline-item::after{
-  height:3px;
-  top:4px;
-  background:var(--primary-deep);
-  border-radius:2px;
-}
-.about-page .timeline-item::before{
-  width:16px;
-  height:16px;
-  top:-2px;
-  background:var(--navy);
-  box-shadow:0 0 0 4px var(--teal), 0 0 0 6px rgba(51,50,26,0.35);
-}
-
 /* judul gradasi Visi & Misi dibuat lebih besar */
 .about-page .ab-grad{
   font-size:clamp(32px, 4.8vw, 56px);
@@ -246,3 +219,152 @@
 @media (max-width:700px){
   .about-page .ab-grad{ font-size:5.2vw; }
 }
+
+
+/* ===== Ketua Wilayah: kartu kecil bergaya kartu Ketua Umum, 8 per baris (2 baris) ===== */
+.rg-grid{ list-style:none; max-width:1240px; margin:0 auto; display:grid; grid-template-columns:repeat(8, 1fr); gap:12px; }
+.rg-card{ aspect-ratio:4 / 5.4; border-radius:10px; box-shadow:0 8px 18px rgba(51,50,26,0.16); }
+.rg-card .bc-bg{ border-radius:10px; }
+.rg-card .bc-plate{ padding:8px 8px 9px; border-radius:0 0 10px 10px; gap:1px; }
+.rg-card .bc-plate h3{ font-size:10.5px; line-height:1.25; font-weight:800; }
+.rg-card .bc-plate p{ font-size:8.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em; }
+.rg-card .bc-plate span{ display:none; }
+.rg-card .bc-empty{ width:64%; bottom:40%; }
+@media (max-width:1100px){ .rg-grid{ grid-template-columns:repeat(4, 1fr); gap:14px; } .rg-card .bc-plate h3{ font-size:12px; } .rg-card .bc-plate p{ font-size:9.5px; } }
+@media (max-width:640px){
+
+  .rg-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+
+/* ===== judul gradasi Visi/Misi: lebih besar & panjang, selalu satu baris ===== */
+.ab-dark-inner{ max-width:1180px; }
+.about-page .ab-grad{
+  font-size:clamp(28px, 5.6vw, 72px);
+  letter-spacing:0.02em;
+  white-space:nowrap;
+}
+@media (max-width:700px){
+  .about-page .ab-grad{ font-size:5.6vw; letter-spacing:0; }
+}
+
+/* Ketua Wilayah: latar sama dengan section Ketua Umum (krem + gumpalan sage & emas); awal memudar dari putih agar menyambung */
+
+/* Ketua Wilayah digabung ke section Ketua Umum: blok di tengah, di bawah kartu Ketua Umum */
+.rg-block{ position:relative; z-index:1; margin:120px auto 0; max-width:1240px; text-align:center; }
+.rg-title{ margin-bottom:40px; }
+/* ===== Makna Logo: logo besar dengan cincin bercahaya, pecahan logo kecil di tiap penjelasan ===== */
+.ab-logo-badge{
+  box-shadow:
+    0 0 0 12px rgba(242,196,106,0.28),
+    0 0 0 28px rgba(242,196,106,0.12),
+    0 24px 60px rgba(0,0,0,0.45);
+}
+.ab-value{ align-items:center; gap:16px; padding:14px 0; }
+.ab-value:first-child{ padding-top:14px; }
+.ab-value-img{
+  flex:0 0 46px;
+  width:46px;
+  height:46px;
+  padding:6px;
+  border-radius:50%;
+  background:var(--white);
+  box-shadow:0 0 0 3px rgba(242,196,106,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ab-value-img img{ width:100%; height:100%; object-fit:contain; }
+.ab-value h4{ font-size:16px; letter-spacing:0.01em; }
+.ab-value h4::after{ content:''; display:block; width:26px; height:2px; margin:6px 0 7px; background:var(--teal); border-radius:2px; }
+.ab-value p{ font-size:13px; }
+
+/* ===== Berawal dari Tekad Bersama: judul satu baris mengikuti lengkungan halus ===== */
+.ab-arc-title{ width:100%; margin:0 0 6px; line-height:0; }
+.ab-arc-title svg{ width:100%; height:auto; display:block; overflow:visible; }
+.ab-arc-title text{ font-family:inherit; font-size:76px; font-weight:800; letter-spacing:0.02em; }
+
+/* paragraf latar belakang sedikit lebih besar */
+.about-page .ab-dark-row:first-child .ab-dark-text{ font-size:15.5px; line-height:1.9; max-width:640px; }
+
+/* ===== Peace / Happy / Joy: tanpa kartu, tipografi besar dengan garis pemisah vertikal ===== */
+.ab-phj{
+  width:100%;
+  margin-top:44px;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+}
+.ab-phj-item{ padding:6px 30px 10px; text-align:center; position:relative; }
+.ab-phj-item + .ab-phj-item{ border-left:1px solid rgba(242,196,106,0.35); }
+.ab-phj-item h4{
+  font-size:clamp(34px, 4.4vw, 54px);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-0.01em;
+  background:linear-gradient(180deg, #F7D58C 0%, #E8A032 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.ab-phj-item--happy h4{ background-image:linear-gradient(180deg, #F2C46A 0%, #C77B22 100%); }
+.ab-phj-item--joy h4{ background-image:linear-gradient(180deg, #E8A032 0%, #B8892B 100%); }
+.ab-phj-line{ display:block; width:36px; height:3px; margin:18px auto 16px; border-radius:2px; background:var(--teal); }
+.ab-phj-item p{ font-size:14.5px; line-height:1.75; color:rgba(251,251,248,0.9); }
+@media (max-width:700px){
+  .ab-phj{ grid-template-columns:1fr; gap:26px; }
+  .ab-phj-item{ padding:0 10px; }
+  .ab-phj-item + .ab-phj-item{ border-left:none; border-top:1px solid rgba(242,196,106,0.3); padding-top:26px; }
+}
+
+/* judul melengkung diperbesar: boleh melebar melewati lebar kolom teks, tetap di tengah */
+.ab-arc-title{ width:min(1100px, 92vw); max-width:none; }
+.ab-arc-title text{ font-size:82px; }
+
+/* ===== Jejak Langkah: tanggal (bulan & tahun) di atas titik, kartu putih dengan aksen emas ===== */
+.about-page .timeline-item{ padding-top:78px; }
+.tl-date{
+  position:absolute;
+  top:0;
+  left:0;
+  font-size:16px;
+  font-weight:800;
+  letter-spacing:0.03em;
+  color:var(--navy);
+}
+.tl-date::after{ content:''; display:block; width:28px; height:3px; margin-top:6px; background:var(--teal); border-radius:2px; }
+.about-page .timeline-item::before{
+  width:16px;
+  height:16px;
+  top:40px;
+  background:var(--navy);
+  box-shadow:0 0 0 4px var(--teal), 0 0 0 6px rgba(51,50,26,0.35);
+}
+.about-page .timeline-item::after{
+  height:3px;
+  top:46.5px;
+  background:var(--primary-deep);
+  border-radius:2px;
+}
+.about-page .timeline-item .timeline-card{
+  height:100%;
+  padding:22px 22px 26px;
+  background:rgba(251,251,248,0.95);
+  border-top:4px solid var(--teal);
+  border-radius:4px;
+  box-shadow:0 18px 38px rgba(51,50,26,0.2);
+}
+.about-page .timeline-item .timeline-card h4{ font-size:17px; font-weight:800; line-height:1.3; color:var(--navy); margin-bottom:10px; }
+.about-page .timeline-item .timeline-card p{ font-size:13.5px; line-height:1.7; color:var(--text-gray); }
+
+/* section Jejak Langkah -> footer: jarak bawah + gradasi memudar ke warna footer */
+.about-page .timeline-section{ position:relative; padding-bottom:190px; }
+.about-page .timeline-section::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:280px;
+  background:linear-gradient(180deg, rgba(51,50,26,0) 0%, rgba(51,50,26,0.35) 45%, rgba(51,50,26,0.8) 80%, var(--navy) 100%);
+  pointer-events:none;
+}
+.about-page .timeline{ position:relative; z-index:1; }

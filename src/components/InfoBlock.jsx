@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import CountUp from './CountUp.jsx';
 
 // Blok teks di antara section bergambar: judul + deskripsi + tombol, lalu 3 angka besar
-export default function InfoBlock({ eyebrow, title, text, cta, stats = [] }) {
+export default function InfoBlock({ eyebrow, title, titleColor, text, cta, stats = [], stack = false }) {
   return (
-    <section className="info-block">
+    <section className={"info-block" + (stats.length ? "" : " info-block--plain")}>
       <div className="info-block-inner">
-        <div className="info-block-top">
+        <div className={"info-block-top" + (stack ? " info-block-top--stack" : "")}>
           <div>
             <p className="info-block-eyebrow">{eyebrow}</p>
-            <h2>{title}</h2>
+            <h2 style={titleColor ? { color: titleColor } : undefined}>{title}</h2>
           </div>
           <p className="info-block-text">{text}</p>
           {cta && (
@@ -21,7 +21,7 @@ export default function InfoBlock({ eyebrow, title, text, cta, stats = [] }) {
         </div>
 
         {stats.length > 0 && (
-          <div className="info-block-stats">
+          <div className="info-block-stats" style={{ "--cols": stats.length }}>
             {stats.map((s) => (
               <div className="info-stat" key={s.label}>
                 <p className="info-stat-label">{s.label}</p>

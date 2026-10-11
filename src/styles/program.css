@@ -1,0 +1,435 @@
+/* ===== HALAMAN PROGRAM (desain penjelas program) ===== */
+.pg2-wrap{ max-width:1180px; margin:0 auto; }
+.pg2-eyebrow{
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--teal-dark);
+  margin-bottom:10px;
+}
+.pg2-head{ margin-bottom:40px; }
+.pg2-head h2,
+.pg2-nav h2{ font-size:clamp(26px, 3vw, 38px); font-weight:800; line-height:1.15; color:var(--navy); letter-spacing:-0.01em; }
+.pg2-note{ margin-top:22px; font-size:13px; color:var(--text-gray); }
+
+/* ---- penjelajah program: navigasi menempel + panel ---- */
+.pg2-explore{
+  max-width:1180px;
+  margin:0 auto;
+  padding:60px 24px 110px;
+  display:grid;
+  grid-template-columns:0.85fr 1.4fr;
+  gap:64px;
+  align-items:start;
+}
+.pg2-nav{ position:sticky; top:110px; }
+.pg2-nav h2{ margin-bottom:30px; }
+
+.pg2-panels{ display:flex; flex-direction:column; gap:80px; }
+.pg2-panel-photo{ position:relative; aspect-ratio:16 / 10; overflow:hidden; border-radius:6px; margin-bottom:26px; }
+.pg2-panel-photo img{ width:100%; height:100%; object-fit:cover; transition:transform 0.7s ease; }
+.pg2-panel:hover .pg2-panel-photo img{ transform:scale(1.04); }
+.pg2-panel-num{
+  position:absolute;
+  left:0;
+  bottom:0;
+  padding:12px 18px;
+  background:var(--navy);
+  color:var(--teal);
+  font-size:22px;
+  font-weight:800;
+}
+.pg2-panel h3{ font-size:clamp(22px, 2.4vw, 30px); font-weight:800; color:var(--navy); margin-bottom:12px; }
+.pg2-panel p{ max-width:620px; font-size:15.5px; line-height:1.85; color:var(--text-gray); }
+
+/* ---- responsif ---- */
+@media (max-width:1000px){
+  .pg2-explore{ grid-template-columns:1fr; gap:36px; }
+  .pg2-nav{ position:static; }
+}
+@media (max-width:640px){
+}
+
+/* ---- hero foto layar penuh (lapisan olive seperti Home & Tentang Kami) ---- */
+.pg2-hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:130px 24px 90px;
+  color:var(--white);
+  background:
+    linear-gradient(120deg, rgba(51,50,26,0.92) 0%, rgba(110,109,60,0.8) 55%, rgba(51,50,26,0.6) 100%),
+    url('/assets/hut-group.jpg') center / cover no-repeat;
+}
+.pg2-hero-text{ width:100%; max-width:1180px; margin:0 auto; }
+.pg2-hero .pg2-eyebrow{ color:var(--teal); }
+.pg2-hero h1{ font-size:clamp(42px, 6vw, 84px); font-weight:800; line-height:1.02; letter-spacing:-0.02em; margin-bottom:24px; }
+.pg2-hero h1 .phj-peace{ color:#DCDBB8; }
+.pg2-hero h1 .phj-happy{ color:var(--teal); }
+.pg2-hero h1 .phj-joy{ color:#E8A032; }
+.pg2-hero h1 .phj-and{ font-size:0.42em; vertical-align:middle; color:rgba(251,251,248,0.8); }
+.pg2-lead{ max-width:560px; font-size:16px; line-height:1.8; color:rgba(251,251,248,0.9); margin-bottom:32px; }
+.pg2-actions{ display:flex; flex-wrap:wrap; gap:12px; }
+.pg2-btn-solid{ background:var(--teal); border-color:var(--teal); color:var(--navy); }
+.pg2-btn-solid:hover{ background:var(--white); border-color:var(--white); color:var(--navy); }
+
+/* ---- rencana empat tahun: pita foto, empat kolom teks ---- */
+.pg3-years{
+  padding:110px 24px;
+  color:var(--white);
+  background:
+    linear-gradient(0deg, rgba(20,20,10,0.9) 0%, rgba(20,20,10,0.72) 100%),
+    url('/assets/hut-ballroom.jpg') center / cover no-repeat;
+}
+.pg3-years-inner{ max-width:1180px; margin:0 auto; }
+.pg3-years h2{ font-size:clamp(28px, 3.4vw, 42px); font-weight:800; margin-bottom:48px; }
+.pg3-years ol{ list-style:none; display:grid; grid-template-columns:repeat(4, 1fr); gap:32px; }
+.pg3-years li{ padding-top:18px; border-top:2px solid var(--teal); }
+.pg3-years-step{ display:block; font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal); margin-bottom:8px; }
+.pg3-years li strong{ display:block; font-size:clamp(24px, 2.6vw, 32px); font-weight:800; margin-bottom:12px; }
+.pg3-years li p{ font-size:15px; line-height:1.7; color:rgba(251,251,248,0.92); margin-bottom:12px; }
+.pg3-years-meta{ font-size:13px; color:rgba(251,251,248,0.7); }
+.pg3-years-note{ margin-top:44px; font-size:13.5px; color:rgba(251,251,248,0.7); }
+
+@media (max-width:1000px){
+  .pg3-years ol{ grid-template-columns:repeat(2, 1fr); row-gap:40px; }
+}
+@media (max-width:560px){
+  .pg3-years ol{ grid-template-columns:1fr; }
+}
+
+/* ---- navigasi program (kiri): daftar judul besar, yang aktif tegas, yang lain memudar + penghitung ---- */
+.pg2-nav h2{ margin-bottom:34px; }
+.pg2-nav-list{ list-style:none; }
+.pg2-nav-list button{
+  display:block;
+  width:100%;
+  padding:8px 0;
+  border:none;
+  background:none;
+  font:inherit;
+  font-size:clamp(20px, 2vw, 26px);
+  font-weight:700;
+  line-height:1.3;
+  text-align:left;
+  color:var(--navy);
+  opacity:0.32;
+  cursor:pointer;
+  transition:opacity 0.25s ease, transform 0.25s ease;
+}
+.pg2-nav-list button:hover{ opacity:0.7; }
+.pg2-nav-list button.is-active{ opacity:1; transform:translateX(10px); }
+.pg2-nav-count{ display:flex; align-items:baseline; gap:8px; margin-top:38px; flex-wrap:wrap; }
+.pg2-nav-count strong{ font-size:44px; font-weight:300; line-height:1; color:var(--navy); }
+.pg2-nav-count span{ font-size:14px; font-weight:700; color:var(--text-gray); }
+.pg2-nav-count i{ display:block; flex:1 0 100%; height:3px; margin-top:14px; background:var(--border-soft); }
+.pg2-nav-count b{ display:block; height:100%; background:var(--teal); transition:width 0.4s ease; }
+
+/* ---- 100 hari pertama: ringkasan target + lima tahap berjajar dengan angka hari besar ---- */
+.pg4-days{ padding:100px 24px; background:var(--bg-soft); }
+.pg4-inner{ max-width:1180px; margin:0 auto; }
+.pg4-top{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:end; margin-bottom:64px; }
+.pg4-top h2{ font-size:clamp(34px, 4.6vw, 64px); font-weight:800; line-height:1; letter-spacing:-0.02em; color:var(--navy); }
+.pg4-goal{ font-size:17px; line-height:1.85; color:var(--text-dark); }
+.pg4-goal strong{ color:var(--teal-dark); }
+.pg4-stages{ list-style:none; display:grid; grid-template-columns:repeat(5, 1fr); border-top:2px solid var(--navy); }
+.pg4-stages li{ padding:26px 22px 8px 0; }
+.pg4-stages li + li{ padding-left:22px; border-left:1px solid var(--border-soft); }
+.pg4-range{ display:block; font-size:clamp(34px, 3.6vw, 52px); font-weight:300; line-height:1; letter-spacing:-0.02em; color:var(--navy); }
+.pg4-range em{ font-style:normal; color:var(--teal-dark); }
+.pg4-unit{ display:block; margin:6px 0 16px; font-size:11.5px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); }
+.pg4-stages p{ font-size:14.5px; line-height:1.7; color:var(--text-gray); }
+
+/* ---- ajakan penutup: pita kuning PP-KOWAD lebar penuh ---- */
+.pg2-cta{ padding:70px 24px; background:var(--teal); color:var(--navy); }
+.pg2-cta-inner{ max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:32px; }
+.pg2-cta h2{ font-size:clamp(26px, 3.2vw, 40px); font-weight:800; line-height:1.1; margin-bottom:10px; }
+.pg2-cta p{ font-size:15px; line-height:1.7; max-width:560px; color:rgba(51,50,26,0.85); }
+.pg2-cta-btn{ background:var(--navy); border-color:var(--navy); color:var(--white); }
+.pg2-cta-btn:hover{ background:var(--white); border-color:var(--white); color:var(--navy); }
+
+@media (max-width:1000px){
+  .pg4-top{ grid-template-columns:1fr; gap:24px; }
+  .pg4-stages{ grid-template-columns:1fr 1fr; }
+  .pg4-stages li{ padding:26px 18px 16px 0; }
+  .pg4-stages li + li{ padding-left:18px; }
+  .pg4-stages li:nth-child(odd){ border-left:none; padding-left:0; }
+}
+@media (max-width:560px){
+  .pg4-stages{ grid-template-columns:1fr; }
+  .pg4-stages li + li{ border-left:none; padding-left:0; border-top:1px solid var(--border-soft); }
+  .pg2-cta-inner{ flex-direction:column; align-items:flex-start; }
+}
+
+/* ======================= revisi: hero kalimat besar, pita CTA ramping, tanpa garis berlebih ======================= */
+
+/* hero: hanya kalimat besar bergaya editorial di kiri bawah foto */
+.pg2-hero{ align-items:flex-end; min-height:100vh; padding:130px 24px 90px; }
+.pg2-hero-text{ max-width:1180px; }
+.pg2-statement{
+  max-width:880px;
+  font-size:clamp(30px, 4.6vw, 62px);
+  font-weight:300;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  margin-bottom:26px;
+}
+.pg2-statement em{ font-style:normal; font-weight:800; color:var(--teal); }
+.pg2-hero .pg2-lead{ margin-bottom:0; font-size:17px; color:rgba(251,251,248,0.85); }
+
+/* penghitung navigasi program tanpa garis kemajuan */
+.pg2-nav-count{ margin-top:34px; }
+.pg2-nav-count i{ display:none; }
+
+/* 100 hari pertama: tanpa garis, hanya angka besar dan jarak */
+.pg4-stages{ border-top:none; gap:0; }
+.pg4-stages li{ padding:8px 28px 8px 0; }
+.pg4-stages li + li{ padding-left:0; border-left:none; }
+
+/* rencana empat tahun: tanpa garis kuning, angka tahun jadi sorotan */
+.pg3-years li{ padding-top:0; border-top:none; }
+.pg3-years li strong{ color:var(--teal); font-size:clamp(30px, 3.2vw, 44px); font-weight:300; letter-spacing:-0.01em; }
+
+/* pita CTA lebih ramping */
+.pg2-cta{ padding:30px 24px; }
+.pg2-cta h2{ font-size:clamp(20px, 2.2vw, 26px); margin-bottom:4px; }
+.pg2-cta p{ font-size:14px; line-height:1.55; }
+.pg2-cta-btn{ padding:10px 20px; font-size:13px; }
+
+@media (max-width:1000px){
+  .pg4-stages li:nth-child(odd){ padding-left:0; }
+  .pg4-stages li + li{ padding-left:0; }
+}
+@media (max-width:560px){
+  .pg4-stages li + li{ border-top:none; padding-top:22px; }
+}
+
+/* navigasi program (kiri) berlatar warna: hanya area foto yang bisa di-scroll yang tetap putih */
+.pg2-nav{
+  padding:44px 38px 40px;
+  border-radius:6px;
+  color:var(--white);
+  background:linear-gradient(160deg, var(--navy) 0%, var(--primary-deep) 100%);
+}
+.pg2-nav h2{ color:var(--white); }
+.pg2-nav-list button{ color:var(--white); opacity:0.5; }
+.pg2-nav-list button:hover{ opacity:0.85; }
+.pg2-nav-count strong{ color:var(--teal); }
+.pg2-nav-count span{ color:rgba(251,251,248,0.75); }
+
+/* ======= navigasi program: panel warna setinggi satu layar, menempel di tepi kiri saat panel foto di-scroll ======= */
+.pg2-explore{
+  max-width:none;
+  margin:0;
+  padding:0;
+  gap:0;
+  grid-template-columns:0.9fr 1.3fr;
+  align-items:stretch;
+}
+.pg2-nav{
+  position:sticky;
+  top:0;
+  align-self:start;
+  height:100vh;
+  border-radius:0;
+  padding:120px 56px 56px max(24px, calc((100vw - 1180px) / 2 + 24px));
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.pg2-panels{
+  padding:100px max(24px, calc((100vw - 1180px) / 2 + 24px)) 110px 72px;
+}
+@media (max-width:1000px){
+  .pg2-explore{ grid-template-columns:1fr; }
+  .pg2-nav{ position:static; height:auto; padding:56px 24px; }
+  .pg2-panels{ padding:56px 24px 80px; }
+}
+
+/* warna latar panel navigasi disamakan dengan hero di atasnya (olive gelap, tanpa gradasi pemudaran) */
+.pg2-explore{ position:relative; }
+.pg2-nav{ background:linear-gradient(120deg, #3b3a1f 0%, #52512b 55%, #403f22 100%); }
+
+/* teks hero tepat di tengah gambar (vertikal dan horizontal) */
+.pg2-hero{ align-items:center; justify-content:center; text-align:center; }
+.pg2-hero-text{ display:flex; flex-direction:column; align-items:center; }
+.pg2-statement{ margin-left:auto; margin-right:auto; }
+.pg2-hero .pg2-lead{ margin-left:auto; margin-right:auto; }
+
+/* ======= redesain panel kiri (tidak scrollable) + ornamen ======= */
+.pg2-nav{ position:sticky; overflow:hidden; z-index:1; }
+.pg2-nav > *:not(.pg2-orn){ position:relative; z-index:1; }
+.pg2-orn{ position:absolute; pointer-events:none; z-index:0; }
+.pg2-orn--ring{
+  bottom:-170px;
+  left:-130px;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  border:2px solid rgba(242,196,106,0.28);
+}
+.pg2-orn--ring2{
+  bottom:-110px;
+  left:-70px;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  border:2px solid rgba(242,196,106,0.18);
+}
+.pg2-orn--mark{
+  right:-70px;
+  bottom:60px;
+  width:300px;
+  height:auto;
+  opacity:0.1;
+  filter:grayscale(1) brightness(2);
+}
+
+.pg2-nav h2{ font-size:clamp(28px, 3vw, 42px); line-height:1.12; margin-bottom:32px; max-width:420px; }
+.pg2-nav-list{ display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
+.pg2-nav-list button{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  width:auto;
+  padding:11px 20px 11px 12px;
+  border-radius:999px;
+  font-size:clamp(15px, 1.4vw, 18px);
+  font-weight:700;
+  color:var(--white);
+  background:rgba(251,251,248,0.08);
+  opacity:1;
+  transform:none;
+  transition:background 0.25s ease, color 0.25s ease;
+}
+.pg2-nav-list button span{
+  width:30px;
+  height:30px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  font-size:12px;
+  font-weight:800;
+  background:rgba(251,251,248,0.16);
+}
+.pg2-nav-list button:hover{ background:rgba(251,251,248,0.18); opacity:1; }
+.pg2-nav-list button.is-active{ background:var(--teal); color:var(--navy); transform:none; opacity:1; }
+.pg2-nav-list button.is-active span{ background:var(--navy); color:var(--teal); }
+
+.pg2-nav-count{ margin-top:44px; display:flex; align-items:baseline; gap:12px; }
+.pg2-nav-count strong{ font-size:clamp(64px, 8vw, 110px); font-weight:300; line-height:0.9; letter-spacing:-0.04em; color:var(--teal); }
+.pg2-nav-count span{ font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:rgba(251,251,248,0.7); }
+
+/* ornamen di area panel foto (kanan): gumpalan sage & emas yang halus */
+.pg2-panels{
+  background:
+    radial-gradient(circle 320px at 96% 6%, rgba(242,196,106,0.4) 0%, rgba(242,196,106,0) 72%),
+    radial-gradient(circle 280px at 4% 30%, rgba(174,172,120,0.45) 0%, rgba(174,172,120,0) 72%),
+    radial-gradient(circle 340px at 98% 52%, rgba(174,172,120,0.4) 0%, rgba(174,172,120,0) 72%),
+    radial-gradient(circle 300px at 2% 76%, rgba(242,196,106,0.42) 0%, rgba(242,196,106,0) 72%),
+    radial-gradient(circle 280px at 94% 96%, rgba(242,196,106,0.35) 0%, rgba(242,196,106,0) 72%);
+}
+@media (max-width:1000px){
+  .pg2-orn--mark{ display:none; }
+  .pg2-nav-count{ margin-top:28px; }
+}
+
+/* ======= 100 Hari Pertama: tahap di kiri, judul & ringkasan di kanan ======= */
+.pg5-days{ padding:110px 24px; background:var(--bg-soft); }
+.pg5-inner{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr 0.9fr;
+  gap:80px;
+  align-items:center;
+}
+.pg5-stages{ list-style:none; display:flex; flex-direction:column; gap:44px; }
+.pg5-stages li{ display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:baseline; }
+.pg5-range{ display:block; font-size:clamp(36px, 3.8vw, 54px); font-weight:300; line-height:1; letter-spacing:-0.02em; color:var(--navy); }
+.pg5-range em{ font-style:normal; color:var(--teal-dark); }
+.pg5-range small{ display:block; margin-top:8px; font-size:11.5px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); }
+.pg5-stages p{ font-size:16px; line-height:1.75; color:var(--text-dark); }
+
+.pg5-aside{ position:static; }
+.pg5-num{
+  font-size:clamp(110px, 14vw, 200px);
+  font-weight:800;
+  line-height:0.85;
+  letter-spacing:-0.05em;
+  background:linear-gradient(180deg, #F7D58C 0%, #E8A032 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.pg5-aside h2{ font-size:clamp(30px, 3.6vw, 48px); font-weight:800; line-height:1.05; color:var(--navy); margin:6px 0 24px; }
+.pg5-goal{ font-size:16px; line-height:1.85; color:var(--text-gray); text-align:justify; }
+.pg5-goal strong{ color:var(--teal-dark); }
+
+@media (max-width:1000px){
+  .pg5-inner{ grid-template-columns:1fr; gap:48px; }
+  .pg5-aside{ position:static; order:-1; }
+}
+@media (max-width:560px){
+  .pg5-stages li{ grid-template-columns:1fr; gap:8px; }
+}
+
+/* ======= 100 Hari Pertama: ornamen latar (versi terang) ======= */
+.pg5-days{ position:relative; overflow:hidden; }
+.pg5-inner{ position:relative; z-index:1; }
+.pg5-orn--ring1{
+  top:-140px;
+  right:-120px;
+  width:440px;
+  height:440px;
+  border-radius:50%;
+  border:2px solid rgba(184,137,43,0.35);
+}
+.pg5-orn--ring2{
+  top:-70px;
+  right:-50px;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  border:2px solid rgba(184,137,43,0.22);
+}
+@media (max-width:800px){
+  .pg5-orn--ring1, .pg5-orn--ring2{ display:none; }
+}
+
+/* panel navigasi: satu warna rata (tanpa gradasi), sama dengan nuansa olive hero di atasnya */
+.pg2-nav{ background:#4a4927; }
+
+/* dasar hero memudar ke warna panel navigasi (#4a4927) supaya sambungan hero -> panel tidak berbeda warna */
+.pg2-hero{ position:relative; }
+.pg2-hero::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:190px;
+  background:linear-gradient(180deg,
+    rgba(74,73,39,0) 0%,
+    rgba(74,73,39,0.35) 35%,
+    rgba(74,73,39,0.8) 75%,
+    #4a4927 100%);
+  pointer-events:none;
+}
+.pg2-hero-text{ position:relative; z-index:1; }
+
+/* hero Program: judul "Peace, Happy, and Joy" di atas kalimat besar */
+.pg2-title-phj{
+  font-size:clamp(40px, 6vw, 84px);
+  font-weight:800;
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  margin-bottom:26px;
+}
+.pg2-hero .pg2-title-phj .phj-peace{ color:#DCDBB8; }
+.pg2-hero .pg2-title-phj .phj-happy{ color:var(--teal); }
+.pg2-hero .pg2-title-phj .phj-joy{ color:#E8A032; }
+.pg2-hero .pg2-title-phj .phj-and{ font-size:0.42em; vertical-align:middle; color:rgba(251,251,248,0.8); }
+.pg2-hero .pg2-statement{ font-size:clamp(22px, 2.8vw, 36px); max-width:760px; }

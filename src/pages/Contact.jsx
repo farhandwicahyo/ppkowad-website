@@ -51,7 +51,7 @@ export default function Contact() {
         eyebrow="Kontak Kami"
         title="Hubungi Kami"
         text="Ada pertanyaan seputar keanggotaan, program, atau acara kami? Silakan hubungi kami melalui kanal di bawah ini."
-        crumb="Kontak"
+        image="munas-signing.jpg"
       />
 
       <section className="section">

@@ -1,11 +1,5 @@
 import { Link } from 'react-router-dom';
-
-const PROGRAMS = [
-  'Pendidikan & Forum Ilmiah',
-  'Pelatihan & Pengembangan Kapasitas',
-  'Kolaborasi Strategis',
-  'Pengabdian Masyarakat',
-];
+import { PROGRAMS } from '../data/programs.js';
 
 export default function Footer() {
   return (
@@ -18,7 +12,7 @@ export default function Footer() {
             </span>
             <span className="logo-text">PP KOWAD</span>
           </Link>
-          <p>PERSATUAN PURNAWIRAWAN KOWAD untuk belajar, berkolaborasi, dan berkontribusi bagi dunia kesehatan.</p>
+          <p>Merajut persatuan dan kesatuan, mendukung Indonesia maju. Purna dalam dinas, abadi dalam pengabdian.</p>
           <div className="footer-social">
             <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.5 1.6-1.5h1.6V3.3C16.4 3.2 15.3 3 14 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.6V21h3.9Z" /></svg></a>
             <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7.3 9.6L4.4 20h2l6-6.7L17 20h4l-7.6-10 6.6-7.4h-2l-5.5 6.1L8 4H4Z" /></svg></a>
@@ -37,8 +31,8 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Program</h4>
           <ul>
-            {PROGRAMS.map((p) => (
-              <li key={p}><Link to="/#program">{p}</Link></li>
+            {PROGRAMS.map(({ title: p }) => (
+              <li key={p}><Link to="/program">{p}</Link></li>
             ))}
           </ul>
         </div>

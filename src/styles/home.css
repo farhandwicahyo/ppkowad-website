@@ -1,0 +1,16 @@
+/* ===== HOME: section Agenda Acara & Kontak ===== */
+
+/* ===== HOME: banner foto lebar penuh tanpa teks ===== */
+.ag-banner{
+  min-height:680px;
+  background:
+    linear-gradient(0deg, rgba(20,20,10,0.4) 0%, rgba(20,20,10,0.08) 60%),
+    var(--ag-image) center / cover no-repeat;
+}
+@media (max-width:600px){ .ag-banner{ min-height:520px; } }
+
+/* kontak: header sederhana */
+.ag-section{ padding:90px 24px; background:var(--white); }
+.ag-wrap{ max-width:1180px; margin:0 auto; }
+.ag-section .hl-head{ margin-bottom:0; }
+@media (max-width:600px){ .ag-section{ padding:60px 20px; } }

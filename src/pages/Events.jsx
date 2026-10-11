@@ -1,14 +1,7 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero.jsx';
+import { EVENTS } from '../data/events.js';
 
-const EVENTS = [
-  { start: '2024-10-22', end: '2024-10-24', title: 'iMEDIC I 2024', tag: 'Simposium Internasional', desc: 'Simposium dan Workshop Kedokteran Militer Internasional pertama, mempertemukan pakar kesehatan militer dari berbagai negara.' },
-  { start: '2025-10-22', end: '2025-10-24', title: 'iMEDIC II 2025', tag: 'Simposium Internasional', desc: 'Kelanjutan simposium tahunan yang membahas perkembangan terkini kedokteran militer dan kesiapsiagaan medis.' },
-  { start: '2026-07-11', end: '2026-07-11', title: 'Musyawarah Nasional PERDOKMIL', tag: 'Munas', desc: 'Musyawarah Nasional Perkumpulan Kedokteran Militer Indonesia untuk menentukan arah organisasi ke depan.' },
-  { start: '2026-08-16', end: '2026-08-16', title: 'Independence Day Golf Tournament', tag: 'Kegiatan Sosial', desc: 'Turnamen golf dalam rangka memperingati Hari Kemerdekaan sekaligus mempererat silaturahmi anggota.' },
-  { start: '2026-08-25', end: '2026-08-26', title: 'PP KOWAD Peduli NTT', tag: 'Bakti Sosial', desc: 'Aksi bakti sosial dan layanan kesehatan gratis bagi masyarakat di Nusa Tenggara Timur.' },
-  { start: '2026-10-21', end: '2026-10-21', title: 'SIERA III 2026', tag: 'Simposium Internasional', desc: 'The 3rd Symposium of Indonesian Health Resilience Association.' },
-];
 
 const MONTHS = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 const WEEKDAYS = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
@@ -32,12 +25,13 @@ function formatRange(ev) {
   return pad2(s.getDate()) + ' ' + MONTHS[s.getMonth()] + ' ' + s.getFullYear() + ' - ' + pad2(e.getDate()) + ' ' + MONTHS[e.getMonth()] + ' ' + e.getFullYear();
 }
 
-// bulan awal & acara terpilih: SIERA III 2026 (fallback ke acara berjalan / terakhir)
+// bulan awal & acara terpilih: acara yang sedang berjalan, lalu yang akan datang terdekat, lalu acara terakhir
 const realToday = new Date();
-const featured = EVENTS.find((ev) => ev.title === 'SIERA III 2026');
+realToday.setHours(0, 0, 0, 0);
 const ongoing = EVENTS.find((ev) => toDate(ev.start) <= realToday && realToday <= toDate(ev.end));
-const startDate = featured ? toDate(featured.start) : ongoing ? realToday : toDate(EVENTS[EVENTS.length - 1].start);
-const defaultEvent = featured || ongoing || EVENTS[EVENTS.length - 1];
+const upcoming = EVENTS.filter((ev) => toDate(ev.start) > realToday).sort((a, b) => toDate(a.start) - toDate(b.start))[0];
+const defaultEvent = ongoing || upcoming || EVENTS[EVENTS.length - 1];
+const startDate = toDate(defaultEvent.start);
 
 function buildCells(year, month) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -77,8 +71,8 @@ export default function Events() {
       <PageHero
         eyebrow="Agenda Acara"
         title="Rangkaian Kegiatan Kami"
-        text="Jangan lewatkan seminar, pelatihan, dan acara tahunan kami."
-        crumb="Agenda Acara"
+        text="Kegiatan organisasi, kebersamaan wilayah, dan tonggak program kerja PP-KOWAD."
+        image="hut-tumpeng.jpg"
       />
 
       <section className="section">

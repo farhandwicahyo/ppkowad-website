@@ -1,13 +1,17 @@
 import BoardSection from '../components/BoardSection.jsx';
+import { REGIONS } from '../data/regions.js';
 
-const LOGO_MEANING = [
-  ['Tameng', 'Ketahanan, perlindungan, dan kesiapsiagaan dalam menjaga kesehatan bangsa.'],
-  ['Tongkat Asclepius', 'Simbol kesehatan yang melambangkan pelayanan kesehatan, penyembuhan, ilmu pengetahuan, dan profesionalisme.'],
-  ['Sayap', 'Kecepatan, mobilitas, dan semangat organisasi dalam memberikan respons terhadap berbagai tantangan kesehatan.'],
-  ['Padi dan Kapas', 'Kesejahteraan, kemanusiaan, serta pengabdian kepada masyarakat.'],
-  ['Dua Bintang', 'Kolaborasi antara unsur sipil dan militer dalam memperkuat ketahanan kesehatan nasional.'],
-  ['Bentuk Lingkaran', 'Persatuan, sinergi, dan komitmen yang berkelanjutan.'],
+// unsur lambang PP-KOWAD: [berkas di public/assets/logo-parts, judul, deskripsi bentuk]; makna resmi dapat dilengkapi kemudian
+const LOGO_ELEMENTS = [
+  ['bintang', 'Bintang', 'Berada di puncak lambang, di atas emblem utama.'],
+  ['padi', 'Padi Emas', 'Karangan padi berwarna emas melingkupi sisi kiri lambang.'],
+  ['karangan', 'Karangan Hijau', 'Karangan daun berwarna hijau melingkupi sisi kanan lambang.'],
+  ['tugu', 'Tugu dan Tangga', 'Bangunan bertiang dengan anak tangga di bagian tengah lambang.'],
+  ['pita', 'Pita Nama', 'Pita hitam di bagian bawah bertuliskan "Persatuan Purnawirawan KOWAD".'],
 ];
+
+// tampilkan hanya bulan dan tahun ("22 September 2026" -> "September 2026"); jika hanya tahun, tampilkan tahun
+const monthYear = (date) => date.replace(/^\d+(-\d+)?\s+/, '');
 
 const MILESTONES = [
   { date: '10 November 1980', title: 'Cikal Bakal Organisasi', text: 'Rapat Perwira Koordinator KOWAD seluruh Indonesia di Puskowad Jakarta menyepakati pembentukan wadah organisasi sukarela bagi Purnawirawan KOWAD.' },
@@ -32,10 +36,11 @@ const MILESTONES = [
   { date: '22 September 2026', title: 'MUNAS I di Bandung', text: 'Pengukuhan 16 Ketua Wilayah periode 2026-2030. Mayjen TNI (K) Purn Dr. dr. Dian Andriani Ratna Dewi terpilih sebagai Ketua Umum periode 2026-2030 dan menerima serah terima jabatan.' },
 ];
 
-const MISI = [
-  'Memelihara soliditas antar-anggota PERSATUAN PURNAWIRAWAN KOWAD.',
-  'Mengembangkan keilmuan kedokteran militer untuk ketahanan kesehatan nasional di bidang kedokteran militer, kegawatdaruratan, dan bencana.',
-  'Memperkuat kolaborasi militer dan sipil dalam tanggap bencana.',
+// arah pengabdian bersama
+const VALUES = [
+  { title: 'Peace', text: 'Hubungan rukun, saling mendengar, dan menghormati keyakinan.' },
+  { title: 'Happy', text: 'Kegiatan pilihan anggota yang menyenangkan dan terjangkau.' },
+  { title: 'Joy', text: 'Persahabatan, apresiasi pengalaman hidup, dan sukacita bersama.' },
 ];
 
 export default function About() {
@@ -54,29 +59,41 @@ export default function About() {
         </p>
       </section>
 
-      {/* satu kolom, satu latar gelap menyambung: Visi, Misi, lalu Makna Logo */}
+      {/* satu kolom, satu latar gelap menyambung: latar belakang, arah pengabdian, lalu makna logo */}
       <div className="ab-dark-wrap">
         <section className="ab-dark-section">
           <div className="ab-dark-inner">
             {/* baris 1: visi */}
             <div className="ab-dark-row">
-              <p className="ab-dark-eyebrow">Visi Kami</p>
-              <h3 className="ab-grad ab-grad--visi">Solid dan Bermitra Strategis</h3>
-              <p className="ab-dark-text">Menjadi organisasi PERSATUAN PURNAWIRAWAN KOWAD yang solid dan bermitra strategis dengan pemerintah dalam membangun serta memperkuat ketahanan kesehatan nasional melalui penerapan ilmu kedokteran militer dan kolaborasi militer-sipil.</p>
+              {/* <p className="ab-dark-eyebrow">Latar Belakang</p> */}
+              <h3 className="ab-arc-title" aria-label="Berawal dari Tekad Bersama">
+                <svg viewBox="0 0 1200 190" role="presentation" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#F2C46A" />
+                      <stop offset="100%" stopColor="#E8A032" />
+                    </linearGradient>
+                    <path id="arcPath" d="M 40 150 Q 600 20 1160 150" />
+                  </defs>
+                  <text fill="url(#arcGrad)">
+                    <textPath href="#arcPath" startOffset="50%" textAnchor="middle">Berawal dari Tekad Bersama</textPath>
+                  </text>
+                </svg>
+              </h3>
+              <p className="ab-dark-text">PP-KOWAD lahir dari keinginan dan tekad para anggota KOWAD yang telah mengakhiri dinas kemiliterannya untuk tetap memelihara jiwa kesatuan dan persatuan dalam kehidupan bermasyarakat, berbangsa, dan bernegara.</p>
             </div>
 
             <div className="ab-arc" aria-hidden="true" />
 
             {/* baris 2: misi */}
             <div className="ab-dark-row">
-              <p className="ab-dark-eyebrow">Misi Kami</p>
-              <h3 className="ab-grad ab-grad--misi">Tiga Langkah Utama</h3>
-              <p className="ab-dark-text">Tiga langkah utama kami dalam memperkuat ketahanan kesehatan nasional.</p>
-              <div className="ab-misi-cards">
-                {MISI.map((m, i) => (
-                  <div className="ab-misi-card" key={i}>
-                    <span>{String(i + 1).padStart(2, '0')}</span>
-                    <p>{m}</p>
+              {/* <p className="ab-dark-eyebrow">Arah Pengabdian 2026–2030</p> */}
+              <div className="ab-phj">
+                {VALUES.map((v) => (
+                  <div className={'ab-phj-item ab-phj-item--' + v.title.toLowerCase()} key={v.title}>
+                    <h4>{v.title}</h4>
+                    <span className="ab-phj-line" aria-hidden="true" />
+                    <p>{v.text}</p>
                   </div>
                 ))}
               </div>
@@ -85,19 +102,19 @@ export default function About() {
             <div className="ab-dark-row ab-logo-block">
               {/* judul di tengah atas */}
               <div className="ab-logo-title">
-                <p className="ab-logo-eyebrow">Identitas</p>
+                {/* <p className="ab-logo-eyebrow">Lambang Organisasi</p> */}
                 <h2>Makna Logo</h2>
               </div>
 
-              {/* dua kolom: kiri logo besar, kanan daftar makna */}
+              {/* dua kolom: kiri logo besar, kanan unsur-unsur lambang */}
               <div className="ab-logo-cols">
                 <div className="ab-logo-side">
                   <span className="ab-logo-badge"><img src="/assets/logo-ppkowad.png" alt="Logo PPKOWAD" /></span>
                 </div>
                 <div className="ab-values-list">
-                  {LOGO_MEANING.map(([title, text]) => (
+                  {LOGO_ELEMENTS.map(([part, title, text]) => (
                     <div className="ab-value" key={title}>
-                      <span className="ab-value-letter" aria-hidden="true">{title.charAt(0)}</span>
+                      <span className="ab-value-img"><img src={"/assets/logo-parts/" + part + ".png"} alt="" /></span>
                       <div>
                         <h4>{title}</h4>
                         <p>{text}</p>
@@ -112,22 +129,39 @@ export default function About() {
       </div>
 
       {/* jajaran anggota (anchor: /about#jajaran) */}
-      <BoardSection />
+      <BoardSection>
+        {/* ketua wilayah 2026–2030 (anchor: /about#wilayah), digabung dalam satu section dengan Ketua Umum */}
+        <div className="rg-block" id="wilayah">
+          <h2 className="board-title rg-title">Ketua Wilayah PP-KOWAD</h2>
+          <ol className="rg-grid">
+            {REGIONS.map((r) => (
+              <li className="bc-card rg-card" key={r.region}>
+                <div className="bc-bg" aria-hidden="true" />
+                <svg className="bc-empty" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.2" /><path d="M3.5 24c0-5 4-8 8.5-8s8.5 3 8.5 8Z" /></svg>
+                <div className="bc-plate">
+                  <h3>{r.chair}</h3>
+                  <p>{r.region}</p>
+                  <span>Ketua Wilayah</span>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </BoardSection>
+
 
       {/* perjalanan organisasi (anchor: /about#perjalanan) */}
       <section className="section timeline-section" id="perjalanan">
         <div className="section-header">
-          <p className="eyebrow">Sejarah Kami</p>
           <h2>Jejak Langkah <span className="accent">PP KOWAD</span></h2>
-          <p>Dari rapat perintis pada 1980 hingga Munas I 2026, setiap tonggak menjadi fondasi PP KOWAD untuk terus tumbuh dan mengabdi.</p>
         </div>
         <div className="timeline">
           <div className="timeline-track">
             {[0, 1].flatMap((copy) =>
               MILESTONES.map((m) => (
                 <div className="timeline-item" key={copy + m.title} aria-hidden={copy > 0 ? 'true' : undefined}>
+                  <p className="tl-date">{monthYear(m.date)}</p>
                   <div className="timeline-card">
-                    <p className="t-year">{m.date}</p>
                     <h4>{m.title}</h4>
                     <p>{m.text}</p>
                   </div>

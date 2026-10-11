@@ -7,10 +7,12 @@ import About from './pages/About.jsx';
 import Events from './pages/Events.jsx';
 import News from './pages/News.jsx';
 import Contact from './pages/Contact.jsx';
+import Program from './pages/Program.jsx';
 
 const TITLES = {
   '/': 'Beranda',
   '/about': 'Tentang Kami',
+  '/program': 'Program',
   '/events': 'Agenda Acara',
   '/news': 'Berita',
   '/contact': 'Kontak',
@@ -33,6 +35,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/program" element={<Program />} />
         <Route path="/anggota" element={<Navigate to="/about#jajaran" replace />} />
         <Route path="/events" element={<Events />} />
         <Route path="/news" element={<News />} />

@@ -231,7 +231,7 @@ img,svg{display:block;max-width:100%;}
 .page-hero{
   background:
     linear-gradient(120deg, rgba(51,50,26,0.92) 0%, rgba(110,109,60,0.78) 55%, rgba(242,196,106,0.5) 100%),
-    url('/assets/IMG_0001.JPEG');
+    url('/assets/munas-stage.jpg');
   background-size:cover;
   background-position:center 15%;
   padding:110px 24px 48px;
@@ -850,7 +850,7 @@ img,svg{display:block;max-width:100%;}
   border-radius:12px;
   color:var(--white);
   text-decoration:none;
-  background:var(--navy);
+  background:linear-gradient(160deg, var(--navy) 0%, var(--primary-deep) 100%);
 }
 .hl-card--lead{ grid-row:span 2; }
 
@@ -1267,7 +1267,7 @@ img,svg{display:block;max-width:100%;}
 
 .pt-tile{
   position:relative;
-  min-height:380px;
+  min-height:560px;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
@@ -1276,7 +1276,7 @@ img,svg{display:block;max-width:100%;}
   color:var(--white);
   text-decoration:none;
   overflow:hidden;
-  background:var(--navy);
+  background:linear-gradient(160deg, var(--navy) 0%, var(--primary-deep) 100%);
 }
 
 .pt-tile img{
@@ -1316,11 +1316,11 @@ img,svg{display:block;max-width:100%;}
 
 @media (max-width:900px){
   .program-tiles{ grid-template-columns:repeat(2, 1fr); }
-  .pt-tile{ min-height:300px; }
+  .pt-tile{ min-height:440px; }
 }
 @media (max-width:560px){
   .program-tiles{ grid-template-columns:1fr; }
-  .pt-tile{ min-height:240px; }
+  .pt-tile{ min-height:360px; }
 }
 
 /* ===== TIMELINE MARQUEE (full lebar, bergerak looping) ===== */
@@ -2060,7 +2060,7 @@ img,svg{display:block;max-width:100%;}
 
 .info-block-stats{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(var(--cols, 3), 1fr);
   gap:40px;
   padding-top:52px;
 }
@@ -2146,7 +2146,15 @@ img,svg{display:block;max-width:100%;}
   position:relative;
   padding:70px 24px 110px;
   /* bagian bawah memudar ke putih agar menyatu dengan section Perjalanan Organisasi */
-  background:linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-soft) 55%, var(--white) 100%);
+  /* gumpalan lingkaran blur tambahan (sage & emas) di sepanjang section, lalu dasar krem yang memudar ke putih */
+  background:
+    radial-gradient(circle 300px at 6% 30%, rgba(174,172,120,0.75) 0%, rgba(174,172,120,0) 72%),
+    radial-gradient(circle 260px at 94% 42%, rgba(242,196,106,0.8) 0%, rgba(242,196,106,0) 72%),
+    radial-gradient(circle 240px at 50% 52%, rgba(174,172,120,0.5) 0%, rgba(174,172,120,0) 72%),
+    radial-gradient(circle 320px at 8% 66%, rgba(242,196,106,0.75) 0%, rgba(242,196,106,0) 72%),
+    radial-gradient(circle 280px at 92% 78%, rgba(174,172,120,0.75) 0%, rgba(174,172,120,0) 72%),
+    radial-gradient(circle 220px at 40% 90%, rgba(242,196,106,0.55) 0%, rgba(242,196,106,0) 72%),
+    linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-soft) 55%, var(--white) 100%);
 }
 /* gumpalan warna sage (#AEAC78) & emas: seluruhnya di dalam section (tidak terpotong), di belakang konten */
 .board-section::before,
@@ -2267,24 +2275,283 @@ img,svg{display:block;max-width:100%;}
 }
 
 /* ===== HOME: seragamkan tipografi dengan judul "Wadah Purnawirawan KOWAD..." ===== */
-/* judul */
-.home-page .home-hero h1,
+/* judul (kecuali hero, yang sengaja lebih besar) */
 .home-page .about-banner h2,
 .home-page .hl-card--lead h3{
   font-size:clamp(22px, 2.4vw, 28px);
   font-weight:700;
   line-height:1.25;
 }
-/* tulisan kecil di atas judul */
-.home-page .home-hero .eyebrow{
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:0.04em;
-}
 /* paragraf */
-.home-page .home-hero .desc,
 .home-page .about-banner-text{
   font-size:13.5px;
   line-height:1.8;
   opacity:1;
 }
+
+/* hero Home: tulisan diperbesar */
+.home-page .home-hero-grid > div{ max-width:720px; }
+.home-page .home-hero .eyebrow{
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  margin-bottom:20px;
+}
+.home-page .home-hero h1{
+  font-size:clamp(30px, 4vw, 46px);
+  font-weight:800;
+  line-height:1.15;
+  margin-bottom:26px;
+}
+.home-page .home-hero .desc{
+  font-size:clamp(15px, 1.25vw, 16.5px);
+  line-height:1.8;
+  max-width:700px;
+  margin-bottom:38px;
+}
+.home-page .home-hero .btn{ font-size:14.5px; padding:15px 28px; }
+
+/* ===== PROGRAM CAROUSEL (home) ===== */
+/* Sengaja jebol lebar container: foto full-bleed nempel ke tepi layar */
+.program-carousel{
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  display:grid;
+  grid-template-columns:50vw 1fr;
+  align-items:stretch;
+}
+
+@media (max-width:860px){
+  .program-carousel{ grid-template-columns:1fr; }
+}
+
+.pc-image{
+  position:relative;
+  overflow:hidden;
+  min-height:600px;
+  background:linear-gradient(150deg, var(--navy), var(--primary-deep));
+}
+
+@media (max-width:860px){
+  .pc-image{ min-height:240px; }
+}
+
+.pc-image-panel{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:scale(1.06);
+  transition:opacity 0.5s ease, transform 0.5s ease;
+}
+
+.pc-image-panel.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+.pc-image-panel img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* .pc-panel = HANYA latar, tidak ada box/container yang membatasi */
+.pc-panel{
+  position:relative;
+  background:var(--bg-soft);
+  display:flex;
+  align-items:center;
+}
+
+@media (max-width:860px){
+  .pc-panel{ min-height:260px; }
+}
+
+/* kartu menimpa foto (overlap) & tombol selalu mengikuti lebar yang sama persis dengan kartu */
+/* padding-right disamakan dengan inset tepi kanan container navbar, supaya tombol carousel sejajar dengan tombol JOIN US */
+.pc-cards-wrap{
+  position:relative;
+  z-index:5;
+  margin-left:-220px;
+  width:calc(100% + 220px);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  padding:72px max(24px, calc((100vw - 1180px) / 2 + 24px)) 24px 0; /* atas lebih besar: kartu turun, foto tetap penuh */
+}
+
+@media (max-width:860px){
+  .pc-cards-wrap{ margin-left:0; width:100%; padding:32px 24px; }
+}
+
+.pc-track-viewport{
+  overflow:hidden;
+  width:100%;
+  max-height:540px;
+  display:flex;
+  align-items:center;
+}
+
+.pc-cards{
+  display:flex;
+  gap:16px;
+  transition:transform 0.4s ease;
+}
+
+.pc-card{
+  flex:0 0 340px;
+  min-height:400px;
+  background:var(--white);
+  border:1px solid var(--border-soft);
+  border-radius:4px;
+  padding:24px 22px;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition:background 0.3s ease, border-color 0.3s ease;
+}
+
+.pc-card h3{
+  font-size:19px;
+  line-height:1.3;
+  /* tinggi header sama untuk semua kartu (2 baris), garis dan deskripsi jadi sejajar */
+  min-height:2.6em;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:12px;
+  transition:color 0.3s ease;
+}
+
+.pc-card .pc-line{
+  width:34px;
+  height:3px;
+  background:var(--teal);
+  border-radius:2px;
+  margin-bottom:10px;
+}
+
+.pc-card p{
+  font-size:16px;
+  color:var(--text-gray);
+  line-height:1.7;
+  flex:1;
+  margin-bottom:10px;
+  transition:color 0.3s ease;
+}
+
+.pc-card.active{
+  background:var(--navy);
+  border-color:var(--navy);
+}
+
+.pc-card.active h3{ color:var(--white); }
+.pc-card.active p{ color:rgba(255,255,255,0.82); }
+
+.pc-nav{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  gap:12px;
+}
+
+/* tombol panah carousel: kotak besar, solid, ikon panah tebal */
+.pc-btn{
+  width:68px;
+  height:68px;
+  border-radius:0;
+  border:none;
+  background:var(--navy);
+  color:var(--white);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background 0.2s ease, color 0.2s ease;
+}
+.pc-btn svg{ width:30px; height:30px; transition:transform 0.2s ease; }
+.pc-btn:hover{ background:var(--teal); color:var(--navy); }
+.pc-btn:first-child:hover svg{ transform:translateX(-3px); }
+.pc-btn:last-child:hover svg{ transform:translateX(3px); }
+
+@media (max-width:600px){
+  .pc-track-viewport{ overflow:visible; max-height:none; }
+  .pc-cards{ flex-direction:column; transform:none !important; }
+  .pc-card{ flex:0 0 auto; width:100%; align-items:center; text-align:center; }
+  .pc-card .pc-line{ margin-left:auto; margin-right:auto; }
+  .pc-nav{ display:none; }
+}
+
+
+/* Home: wadah carousel program (carousel sendiri melebar penuh ke tepi layar) */
+.program-carousel-section{ padding:0; overflow:hidden; background:var(--bg-soft); } /* sama dengan section "PP KOWAD dalam Aksi" */
+
+/* info block tanpa angka: tidak perlu garis pemisah & jarak bawah ekstra */
+.info-block--plain .info-block-top{ border-bottom:none; padding-bottom:0; }
+
+/* Berita di Home dengan 3 item: kartu besar + 2 kartu kecil bertumpuk */
+.hl-grid--3{ grid-template-columns:1.9fr 1fr; }
+@media (max-width:900px){ .hl-grid--3{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .hl-grid--3{ grid-template-columns:1fr; } }
+@media (max-width:900px){ .hl-grid--3{ grid-template-rows:320px 220px; } }
+
+/* Home: kotak kegiatan lebar penuh, jarak atas dan bawah blok teks kegiatan sama (80px) */
+#kegiatan{ padding:0; margin-top:0; }
+
+/* Home: judul program kerja dua baris; "Peace, Happy, and Joy" disorot sebagai tipografi besar berwarna */
+.info-block h2 .phj{
+  display:block;
+  margin-top:10px;
+  font-size:clamp(34px, 4.6vw, 56px);
+  font-weight:800;
+  line-height:1.08;
+  letter-spacing:-0.01em;
+}
+.phj-peace{ color:var(--primary-deep); }
+.phj-happy{ color:var(--teal-dark); }
+.phj-joy{ color:#E8A032; }
+.phj-and{ font-size:0.5em; font-weight:600; color:var(--text-gray); letter-spacing:0.04em; text-transform:uppercase; }
+
+/* judul program kerja: 3 kolom (judul | paragraf | tombol), tiap baris judul satu baris penuh */
+.info-block-top--stack{ grid-template-columns:auto minmax(0, 1fr) auto; column-gap:44px; }
+.info-block-top--stack h2,
+.info-block-top--stack h2 .phj{ white-space:nowrap; }
+.info-block-top--stack h2 .phj{ font-size:clamp(26px, 3.4vw, 44px); }
+@media (max-width:1000px){
+  .info-block-top--stack{ grid-template-columns:1fr; row-gap:22px; }
+  .info-block-top--stack .pill-btn{ justify-self:start; }
+}
+
+/* Berita (mode develop): kotak pengganti foto */
+.news-ph{
+  width:100%;
+  height:100%;
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:0.14em;
+  color:rgba(251,251,248,0.85);
+  background:linear-gradient(160deg, var(--navy) 0%, var(--primary-deep) 100%);
+}
+.news-ph--modal{ min-height:300px; font-size:16px; }
+
+/* ===== hero halaman Agenda, Berita, Kontak: tinggi sedang (bukan satu layar), lapisan olive sama dengan hero lain ===== */
+.page-hero{
+  min-height:440px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:130px 24px 70px;
+  background:
+    linear-gradient(120deg, rgba(51,50,26,0.92) 0%, rgba(110,109,60,0.82) 55%, rgba(51,50,26,0.75) 100%),
+    var(--hero-image, url('/assets/munas-stage.jpg')) center / cover no-repeat;
+}
+.page-hero h1{ font-size:clamp(36px, 5vw, 64px); font-weight:300; line-height:1.05; letter-spacing:-0.02em; margin-bottom:18px; }
+.page-hero > p:not(.eyebrow){ max-width:640px; font-size:16px; line-height:1.75; color:rgba(251,251,248,0.88); }
+.page-hero .eyebrow{ color:var(--teal); }
+@media (max-width:600px){ .page-hero{ min-height:380px; padding:110px 20px 56px; } }

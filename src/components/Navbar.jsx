@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+
+// halaman yang heronya berlatar terang: navbar langsung tampil solid agar menu terbaca
+const LIGHT_HERO_PAGES = [];
 
 const LINKS = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'Tentang Kami' },
+  { to: '/program', label: 'Program' },
   { to: '/events', label: 'Agenda Acara' },
   { to: '/news', label: 'Berita' },
   { to: '/contact', label: 'Kontak' },
@@ -14,6 +18,8 @@ const activeClass = ({ isActive }) => (isActive ? 'active' : undefined);
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const solid = scrolled || LIGHT_HERO_PAGES.includes(pathname);
 
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 40);
@@ -25,7 +31,7 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <header className={'site-nav' + (scrolled ? ' scrolled' : '')}>
+    <header className={'site-nav' + (solid ? ' scrolled' : '')}>
       <div className="nav-inner">
         <Link className="site-logo" to="/" onClick={close}>
           <span className="logo-mark">
