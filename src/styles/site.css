@@ -2479,6 +2479,7 @@ img,svg{display:block;max-width:100%;}
   .pc-track-viewport{ overflow:visible; max-height:none; }
   .pc-cards{ flex-direction:column; transform:none !important; }
   .pc-card{ flex:0 0 auto; width:100%; align-items:center; text-align:center; }
+  .pc-card.pc-clone{ display:none; } /* di mobile kartu ditumpuk: hanya set asli, salinan untuk loop desktop disembunyikan */
   .pc-card .pc-line{ margin-left:auto; margin-right:auto; }
   .pc-nav{ display:none; }
 }

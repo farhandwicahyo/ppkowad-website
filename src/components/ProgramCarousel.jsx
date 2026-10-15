@@ -3,7 +3,7 @@ import { PROGRAMS } from '../data/programs.js';
 
 const N = PROGRAMS.length;
 // Tiga set kartu [klon-sebelum][asli][klon-sesudah] -> carousel infinite loop
-const ITEMS = [0, 1, 2].flatMap((set) => PROGRAMS.map((p, i) => ({ ...p, real: i, key: set + '-' + i })));
+const ITEMS = [0, 1, 2].flatMap((set) => PROGRAMS.map((p, i) => ({ ...p, real: i, clone: set !== 1, key: set + '-' + i })));
 const realOf = (pos) => ((pos % N) + N) % N;
 
 export default function ProgramCarousel() {
@@ -55,7 +55,7 @@ export default function ProgramCarousel() {
                 <div
                   key={it.key}
                   ref={i === 0 ? firstCard : null}
-                  className={'pc-card' + (it.real === active ? ' active' : '')}
+                  className={'pc-card' + (it.real === active ? ' active' : '') + (it.clone ? ' pc-clone' : '')}
                   onClick={() => setPos(i)}
                 >
                   <h3>{it.title}</h3>
