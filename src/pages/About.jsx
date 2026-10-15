@@ -1,13 +1,28 @@
 import BoardSection from '../components/BoardSection.jsx';
 import { REGIONS } from '../data/regions.js';
+import { TUJUAN, FUNGSI, STRUKTUR, STRUKTUR_NOTE, ATRIBUT } from '../data/organisasi.js';
 
-// unsur lambang PP-KOWAD: [berkas di public/assets/logo-parts, judul, deskripsi bentuk]; makna resmi dapat dilengkapi kemudian
+// unsur lambang PP-KOWAD: [berkas di public/assets/logo-parts, judul, makna]
+// Sumber: AD/ART PP-KOWAD 2025, Pasal 18 dan Pasal 23 (Lampiran 2), diurutkan dari atas ke bawah lambang
 const LOGO_ELEMENTS = [
-  ['bintang', 'Bintang', 'Berada di puncak lambang, di atas emblem utama.'],
-  ['padi', 'Padi Emas', 'Karangan padi berwarna emas melingkupi sisi kiri lambang.'],
-  ['karangan', 'Karangan Hijau', 'Karangan daun berwarna hijau melingkupi sisi kanan lambang.'],
-  ['tugu', 'Tugu dan Tangga', 'Bangunan bertiang dengan anak tangga di bagian tengah lambang.'],
-  ['pita', 'Pita Nama', 'Pita hitam di bagian bawah bertuliskan "Persatuan Purnawirawan KOWAD".'],
+  ['bintang', 'Tanda Bintang', 'Berwarna kuning emas. Melambangkan keagungan Tuhan Yang Maha Esa, sumber motivasi pengabdian setiap anggota.'],
+  ['melati', 'Busur Panah dan Bunga Melati', 'Busur panah kuning emas melambangkan jiwa keprajuritan yang dilandasi kesederhanaan. Bunga melati putih berkelopak hijau melambangkan kesucian dan keikhlasan di sanubari setiap anggota.'],
+  ['tugu', 'Tangga dan Tiang', 'Lima anak tangga dan enam tiang berwarna hitam. Melambangkan semangat yang menjadi pedoman anggota untuk meneruskan perjuangan dalam kehidupan bermasyarakat, berlandaskan Pancasila dan Sad Satya Sri Sena.'],
+  ['padi', 'Bulir Padi', 'Dua puluh bulir berwarna kuning emas. Bersama kapas, melambangkan cita-cita kesejahteraan keluarga, masyarakat, bangsa, dan negara, serta mengingatkan kelahiran PP-KOWAD pada 20 September 2014.'],
+  ['karangan', 'Kapas', 'Sembilan kuntum kapas di sisi kanan lambang, berpasangan dengan bulir padi di sisi kiri sebagai lambang cita-cita kesejahteraan bersama.'],
+  ['pita', 'Pita Nama', 'Pita hitam bertuliskan "Persatuan Purnawirawan Korps Wanita Angkatan Darat" berwarna putih, menjelaskan nama organisasi.'],
+];
+
+// arti keseluruhan lambang (AD/ART 2025, Pasal 23 ayat 3 huruf g)
+const LOGO_SUMMARY = 'Untuk meningkatkan tali persaudaraan, persatuan, dan kesatuan serta menciptakan kesejahteraan bagi keluarga, masyarakat, bangsa, dan negara, anggota purnawirawan KOWAD bertekad membentuk suatu persatuan yang berlandaskan Ketuhanan Yang Maha Esa serta tetap memiliki semangat sesuai nilai-nilai Pancasila dan Sad Satya Sri Sena.';
+
+// visi dan misi (AD PP-KOWAD 2025, Pasal 9)
+const VISI = ['Terciptanya Persatuan Purnawirawan Korps Wanita Angkatan Darat yang', 'mandiri, sehat, sejahtera, dan bermartabat.'];
+const MISI = [
+  'Memberdayakan Persatuan Purnawirawan Korps Wanita Angkatan Darat dengan meningkatkan kapasitasnya secara profesional.',
+  'Membangun produktivitas dan menyiapkan kemampuan jiwa kewirausahaan.',
+  'Meningkatkan kesehatan yang berkualitas dan ramah lingkungan.',
+  'Memantapkan suasana kehidupan yang tenteram penuh kedamaian dan bermartabat.',
 ];
 
 // tampilkan hanya bulan dan tahun ("22 September 2026" -> "September 2026"); jika hanya tahun, tampilkan tahun
@@ -32,15 +47,9 @@ const MILESTONES = [
   { date: '19 September 2024', title: 'Rakor Palembang, 16 Wilayah', text: 'AD/ART 2024 berlaku, bendera baru dan Pakaian Seragam Batik (PSB) diresmikan, serta Wilayah Riau dan Papua dikukuhkan sehingga total ada 16 wilayah.' },
   { date: '23 Oktober 2024', title: 'Anggota Federasi Kowani', text: 'Resmi menjadi anggota Federasi Kowani nomor urut 111, disahkan lewat SK Nomor Skep-14/Kowani/XII/2024 tanggal 4 Desember 2024.' },
   { date: '10 Mei 2025', title: 'Resmi Berbadan Hukum', text: 'Terbit Keputusan Menteri Hukum tentang pengesahan pendirian Perkumpulan Persatuan Purnawirawan Korps Wanita Angkatan Darat.' },
+  { date: '17 Mei 2025', title: 'Perubahan AD/ART Ditetapkan', text: 'Ketua Umum menetapkan Perubahan Anggaran Dasar dan Anggaran Rumah Tangga PP-KOWAD lewat Keputusan Nomor Kep/02/PPKP/V/2025, berdasarkan Akta Notaris Rusnaldy, SH, Nomor 01 tanggal 7 Mei 2025.' },
   { date: '17 Juli 2025', title: 'Peresmian dan Pengukuhan Pengurus Pusat', text: 'Peresmian Persatuan Purnawirawan KOWAD dan pengukuhan Pengurus Pusat masa bakti 2022-2026 di Aula Soeryadi PPAD, Matraman, oleh Plt. Ketua Umum PPAD Mayjen TNI (Purn) Dr. Komaruddin Simanjuntak, S.IP., M.Sc.' },
   { date: '22 September 2026', title: 'MUNAS I di Bandung', text: 'Pengukuhan 16 Ketua Wilayah periode 2026-2030. Mayjen TNI (K) Purn Dr. dr. Dian Andriani Ratna Dewi terpilih sebagai Ketua Umum periode 2026-2030 dan menerima serah terima jabatan.' },
-];
-
-// arah pengabdian bersama
-const VALUES = [
-  { title: 'Peace', text: 'Hubungan rukun, saling mendengar, dan menghormati keyakinan.' },
-  { title: 'Happy', text: 'Kegiatan pilihan anggota yang menyenangkan dan terjangkau.' },
-  { title: 'Joy', text: 'Persahabatan, apresiasi pengalaman hidup, dan sukacita bersama.' },
 ];
 
 export default function About() {
@@ -85,44 +94,43 @@ export default function About() {
 
             <div className="ab-arc" aria-hidden="true" />
 
-            {/* baris 2: misi */}
-            <div className="ab-dark-row">
-              {/* <p className="ab-dark-eyebrow">Arah Pengabdian 2026–2030</p> */}
-              <div className="ab-phj">
-                {VALUES.map((v) => (
-                  <div className={'ab-phj-item ab-phj-item--' + v.title.toLowerCase()} key={v.title}>
-                    <h4>{v.title}</h4>
-                    <span className="ab-phj-line" aria-hidden="true" />
-                    <p>{v.text}</p>
-                  </div>
-                ))}
+            {/* visi dan misi: kalimat visi dua baris, lalu empat misi berjajar (kata kerja jadi judul kecil) */}
+            <div className="ab-dark-row ab-vm3">
+              <p className="ab-vm3-visi">{VISI[0]} <em>{VISI[1]}</em></p>
+
+              <div className="ab-vm4">
+                {MISI.map((t) => {
+                  const [verb, ...rest] = t.split(' ');
+                  return (
+                    <div className="ab-vm4-item" key={t}>
+                      <h4>{verb}</h4>
+                      <p>{rest.join(' ')}</p>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
-            <div className="ab-dark-row ab-logo-block">
-              {/* judul di tengah atas */}
-              <div className="ab-logo-title">
-                {/* <p className="ab-logo-eyebrow">Lambang Organisasi</p> */}
-                <h2>Makna Logo</h2>
+            {/* makna logo: logo besar di tengah, unsur-unsur lambang melengkung di bawahnya */}
+            <div className="ab-dark-row ab-logo2">
+              <h2 className="ab-sec-title">Makna Logo</h2>
+              <span className="ab-logo-badge ab-logo2-badge"><img src="/assets/logo-ppkowad.png" alt="Logo PPKOWAD" /></span>
+
+              <div className="ab-parts">
+                {LOGO_ELEMENTS.map(([part, title, text], i) => {
+                  // posisi turun mengikuti setengah elips: ujung kiri/kanan paling atas, tengah paling bawah
+                  const u = -1 + (2 * i) / (LOGO_ELEMENTS.length - 1);
+                  return (
+                    <div className="ab-part" key={title} style={{ '--dy': Math.sqrt(1 - u * u).toFixed(3) }}>
+                      <span className="ab-part-img"><img src={'/assets/logo-parts/' + part + '.png'} alt="" /></span>
+                      <h4>{title}</h4>
+                      <p>{text}</p>
+                    </div>
+                  );
+                })}
               </div>
 
-              {/* dua kolom: kiri logo besar, kanan unsur-unsur lambang */}
-              <div className="ab-logo-cols">
-                <div className="ab-logo-side">
-                  <span className="ab-logo-badge"><img src="/assets/logo-ppkowad.png" alt="Logo PPKOWAD" /></span>
-                </div>
-                <div className="ab-values-list">
-                  {LOGO_ELEMENTS.map(([part, title, text]) => (
-                    <div className="ab-value" key={title}>
-                      <span className="ab-value-img"><img src={"/assets/logo-parts/" + part + ".png"} alt="" /></span>
-                      <div>
-                        <h4>{title}</h4>
-                        <p>{text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <p className="ab-logo-summary ab-logo2-summary"><strong>Arti keseluruhan.</strong> {LOGO_SUMMARY}</p>
             </div>
           </div>
         </section>
@@ -149,6 +157,50 @@ export default function About() {
         </div>
       </BoardSection>
 
+
+      {/* tujuan & fungsi, struktur kepengurusan, dan atribut organisasi (AD/ART 2025) */}
+      <section className="dr-section" id="organisasi">
+        <div className="dr-wrap">
+          <div className="dr-row">
+            <h2>Tujuan dan Fungsi</h2>
+            <div className="dr-cols">
+              <div>
+                <h3><small>AD Pasal 7</small>Tujuan</h3>
+                <ul className="dr-list">{TUJUAN.map((t) => <li key={t}>{t}</li>)}</ul>
+              </div>
+              <div>
+                <h3><small>AD Pasal 8</small>Fungsi</h3>
+                <ul className="dr-list">{FUNGSI.map((t) => <li key={t}>{t}</li>)}</ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="dr-row" id="struktur">
+            <h2>Struktur Kepengurusan</h2>
+            <div className="dr-cols dr-cols--3">
+              {STRUKTUR.map((g) => (
+                <div key={g.title}>
+                  <h3><small>{g.level}</small>{g.title}</h3>
+                  <ul className="dr-list">{g.items.map((t) => <li key={t}>{t}</li>)}</ul>
+                </div>
+              ))}
+              <p className="dr-note">{STRUKTUR_NOTE}</p>
+            </div>
+          </div>
+
+          <div className="dr-row" id="atribut">
+            <h2>Atribut Organisasi</h2>
+            <div className="dr-cols">
+              {ATRIBUT.map((a) => (
+                <div key={a.title}>
+                  <h3>{a.title}</h3>
+                  <p>{a.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* perjalanan organisasi (anchor: /about#perjalanan) */}
       <section className="section timeline-section" id="perjalanan">

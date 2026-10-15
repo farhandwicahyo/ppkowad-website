@@ -368,3 +368,138 @@
   pointer-events:none;
 }
 .about-page .timeline{ position:relative; z-index:1; }
+
+/* ===== Visi dan Misi (AD PP-KOWAD 2025, Pasal 9) + arti keseluruhan lambang ===== */
+.ab-vm .ab-logo-cols{ align-items:start; }
+.ab-vm-label{ font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.ab-vm-visi-text{ font-size:clamp(20px, 2.3vw, 28px); font-weight:600; line-height:1.5; color:var(--white); }
+.ab-vm .ab-value-letter{ font-weight:300; }
+.ab-logo-summary{ margin-top:24px; font-size:var(--fs-body, 14px); line-height:1.8; color:rgba(251,251,248,0.85); text-align:justify; }
+.ab-logo-summary strong{ color:var(--teal); font-weight:700; }
+
+/* ===== revisi: Visi & Misi satu kolom, Makna Logo dengan unsur melengkung di bawah logo ===== */
+.ab-sec-title{
+  font-size:var(--fs-title, 28px);
+  font-weight:700;
+  line-height:1.25;
+  text-align:center;
+  margin-bottom:36px;
+  background:linear-gradient(90deg, var(--teal) 0%, var(--blue) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+/* visi & misi */
+.ab-dark-row.ab-vm2{ max-width:760px; margin-top:24px; }
+.ab-vm2 .ab-vm-label{ text-align:center; margin-bottom:12px; }
+.ab-vm2-visi{ max-width:680px; margin:0 auto 48px; font-size:clamp(20px, 2.3vw, 28px); font-weight:600; line-height:1.5; text-align:center; color:var(--white); }
+.ab-vm2-misi{ list-style:none; width:100%; display:flex; flex-direction:column; gap:22px; text-align:left; }
+.ab-vm2-misi li{ display:grid; grid-template-columns:56px 1fr; gap:18px; align-items:baseline; }
+.ab-vm2-misi span{ font-size:30px; font-weight:300; line-height:1; color:var(--teal); }
+.ab-vm2-misi p{ font-size:var(--fs-body, 14px); line-height:1.8; color:rgba(251,251,248,0.9); text-align:justify; }
+
+/* makna logo */
+.ab-dark-row.ab-logo2{ max-width:none; width:min(1180px, 92vw); margin-top:110px; }
+.ab-logo2-badge{ width:clamp(220px, 26vw, 300px); }
+.ab-parts{
+  --arc-h:110px;
+  position:relative;
+  width:100%;
+  margin-top:-70px; /* ujung lengkungan naik sejajar bagian bawah logo besar */
+  display:grid;
+  grid-template-columns:repeat(6, minmax(0, 1fr));
+  gap:22px;
+  padding-bottom:var(--arc-h);
+}
+/* garis lengkung tipis yang melewati pusat setiap lingkaran unsur */
+.ab-parts-arc{
+  position:absolute;
+  top:32px;
+  left:calc(100% / 12);
+  right:calc(100% / 12);
+  height:var(--arc-h);
+  border:1.5px solid rgba(242,196,106,0.55);
+  border-top:none;
+  border-radius:0 0 50% 50% / 0 0 100% 100%;
+  pointer-events:none;
+}
+.ab-part{ position:relative; display:flex; flex-direction:column; align-items:center; transform:translateY(calc(var(--dy) * var(--arc-h))); }
+.ab-part-img{
+  width:64px;
+  height:64px;
+  padding:12px;
+  margin-bottom:14px;
+  border-radius:50%;
+  background:var(--white);
+  box-shadow:0 0 0 5px rgba(242,196,106,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.ab-part-img img{ width:100%; height:100%; object-fit:contain; }
+.ab-part h4{ font-size:14.5px; font-weight:700; line-height:1.35; text-align:center; color:var(--white); margin-bottom:8px; min-height:2.7em; }
+.ab-part p{ width:100%; font-size:12.5px; line-height:1.7; color:rgba(251,251,248,0.82); text-align:justify; }
+.ab-logo2-summary{ max-width:760px; margin:40px auto 0; }
+
+@media (max-width:1000px){
+  .ab-parts{ grid-template-columns:repeat(3, minmax(0, 1fr)); gap:36px 24px; padding-bottom:0; margin-top:40px; }
+  .ab-part{ transform:none; }
+  .ab-parts-arc{ display:none; }
+}
+@media (max-width:560px){
+  .ab-parts{ grid-template-columns:1fr 1fr; }
+  .ab-vm2-misi li{ grid-template-columns:40px 1fr; }
+}
+
+/* ===== revisi 2: visi & misi tanpa judul, lebih mengalir ===== */
+.ab-dark-row.ab-vm3{ max-width:720px; margin-top:28px; }
+.ab-vm3 .ab-vm-label{ text-align:center; margin-bottom:14px; }
+.ab-vm3-visi{ margin-bottom:64px; font-size:clamp(22px, 2.6vw, 32px); font-weight:300; line-height:1.45; text-align:center; color:var(--white); }
+.ab-vm3-visi em{
+  font-style:normal;
+  font-weight:700;
+  background:linear-gradient(90deg, #F2C46A 0%, #E8A032 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.ab-vm3-misi{ display:flex; flex-direction:column; gap:18px; }
+.ab-vm3-misi p{ font-size:15.5px; line-height:1.8; text-align:center; color:rgba(251,251,248,0.85); }
+.ab-vm3-misi strong{ font-weight:700; color:var(--teal); }
+
+/* ===== revisi 2: unsur lambang tanpa garis, melengkung membungkus logo utama ===== */
+.ab-parts-arc{ display:none; }
+
+/* ===== revisi 3: visi dua baris, misi empat kolom ===== */
+.ab-dark-row.ab-vm3{ max-width:1080px; }
+.ab-vm3-visi{ font-size:clamp(20px, 2.2vw, 28px); }
+.ab-vm3-visi em{ display:block; }
+.ab-vm3-misi{ display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:36px; width:100%; }
+.ab-vm3-misi p{ font-size:14.5px; }
+@media (max-width:900px){ .ab-vm3-misi{ grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (max-width:560px){ .ab-vm3-misi{ grid-template-columns:1fr; gap:20px; } }
+
+/* ===== revisi 4: misi empat kolom, kata kerja sebagai judul kecil bergradasi emas ===== */
+.ab-vm3-visi{ margin-bottom:72px; }
+.ab-vm4{ width:100%; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:40px; text-align:center; }
+.ab-vm4-item h4{
+  font-size:clamp(20px, 1.9vw, 24px);
+  font-weight:600;
+  line-height:1.2;
+  margin-bottom:12px;
+  background:linear-gradient(90deg, #F2C46A 0%, #E8A032 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.ab-vm4-item p{ font-size:var(--fs-body, 14px); line-height:1.75; color:rgba(251,251,248,0.82); }
+@media (max-width:900px){ .ab-vm4{ grid-template-columns:repeat(2, minmax(0, 1fr)); row-gap:44px; } }
+@media (max-width:560px){ .ab-vm4{ grid-template-columns:1fr; } }
+
+/* arti keseluruhan selebar kontainer */
+.ab-logo2-summary{ max-width:none; width:100%; }
+
+/* arti keseluruhan diperbesar agar menonjol */
+.ab-logo2-summary{ margin-top:56px; font-size:clamp(17px, 1.6vw, 20px); line-height:1.75; color:var(--white); }
+.ab-logo2-summary strong{ font-size:1.1em; }

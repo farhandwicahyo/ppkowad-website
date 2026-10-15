@@ -347,11 +347,13 @@
   align-items:center;
 }
 .pg5-stages{ list-style:none; display:flex; flex-direction:column; gap:44px; }
-.pg5-stages li{ display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:baseline; }
+.pg5-stages > li{ display:grid; grid-template-columns:200px 1fr; gap:28px; align-items:baseline; }
 .pg5-range{ display:block; font-size:clamp(36px, 3.8vw, 54px); font-weight:300; line-height:1; letter-spacing:-0.02em; color:var(--navy); }
 .pg5-range em{ font-style:normal; color:var(--teal-dark); }
 .pg5-range small{ display:block; margin-top:8px; font-size:11.5px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--teal-dark); }
-.pg5-stages p{ font-size:16px; line-height:1.75; color:var(--text-dark); }
+.pg5-stages ul{ list-style:none; display:flex; flex-direction:column; gap:8px; }
+.pg5-stages ul li{ position:relative; padding-left:18px; font-size:var(--fs-body, 14px); line-height:1.75; color:var(--text-dark); }
+.pg5-stages ul li::before{ content:''; position:absolute; left:0; top:0.72em; width:6px; height:6px; border-radius:50%; background:var(--teal); }
 
 .pg5-aside{ position:static; }
 .pg5-num{
@@ -373,7 +375,7 @@
   .pg5-aside{ position:static; order:-1; }
 }
 @media (max-width:560px){
-  .pg5-stages li{ grid-template-columns:1fr; gap:8px; }
+  .pg5-stages > li{ grid-template-columns:1fr; gap:8px; }
 }
 
 /* ======= 100 Hari Pertama: ornamen latar (versi terang) ======= */

@@ -6,11 +6,16 @@ const WA_NUMBER = '6285710116209';
 const INFO = [
   {
     label: 'Alamat',
-    value: 'Jl Percetakan Negara XI No. 38 RT 07/RW 04, Kel. Rawasari, Cempaka Putih, Jakarta Pusat 10510',
+    value: 'Jl. Matraman Raya No. 114, RT 04/RW 03, Kel. Kebon Manggis, Kec. Matraman, Jakarta Timur 13150',
     icon: (<><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></>),
   },
   {
-    label: 'Telepon / WhatsApp',
+    label: 'Telepon Kantor Pusat',
+    value: '(021) 858-0236',
+    icon: (<path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L7.1 8.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z" />),
+  },
+  {
+    label: 'WhatsApp',
     value: '+62 851-7783-8869',
     icon: (<path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1h2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L7.1 8.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.9 2Z" />),
   },

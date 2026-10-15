@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PROGRAMS, STAGES_100, PLAN_4_YEARS } from '../data/programs.js';
+import { BIDANG_KERJA } from '../data/organisasi.js';
 
 const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
@@ -72,8 +73,10 @@ function FirstHundredDays() {
             const [from, to] = s.time.match(/\d+/g);
             return (
               <li key={s.time}>
-                <span className="pg5-range">{from}<em>–</em>{to}<small>hari</small></span>
-                <p>{s.text}</p>
+                <span className="pg5-range">{from}<em>–</em>{to}<small>hari · {s.month}</small></span>
+                <ul>
+                  {s.items.map((t) => <li key={t}>{t}</li>)}
+                </ul>
               </li>
             );
           })}
@@ -84,9 +87,9 @@ function FirstHundredDays() {
           <p className="pg5-num">100</p>
           <h2>Hari Pertama</h2>
           <p className="pg5-goal">
-            Setiap dari <strong>16 wilayah</strong> punya penghubung dan kegiatan kebersamaan, <strong>17 set seragam</strong>{' '}
-            pengurus pusat selesai, <strong>3 mitra</strong> bisa dipakai dengan KTA, dan <strong>17 halaman website</strong>{' '}
-            pusat dan wilayah siap diluncurkan.
+            Dalam 100 hari pertama, pengurus pusat menuntaskan <strong>17 KTA</strong> dan <strong>17 seragam</strong>, menjalin kerja
+            sama dengan <strong>3 mitra</strong>, dan menunjuk penghubung wilayah sebagai pengelola website. Masa ini ditutup dengan
+            finalisasi <strong>AD/ART</strong> dan peluncuran <strong>website PP-KOWAD</strong> pada 8 Januari 2027.
           </p>
         </div>
       </div>
@@ -115,6 +118,27 @@ function FourYears() {
   );
 }
 
+// empat bidang kerja (ART Pasal 30): judul + butir kegiatan
+function BidangKerja() {
+  return (
+    <section className="dr-section">
+      <div className="dr-wrap">
+        <div className="dr-row">
+          <h2>Bidang Kerja Organisasi</h2>
+          <div className="dr-cols">
+            {BIDANG_KERJA.map((b) => (
+              <div key={b.title}>
+                <h3>{b.title}</h3>
+                <ul className="dr-list">{b.items.map((t) => <li key={t}>{t}</li>)}</ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Program() {
   return (
     <div className="program-page">
@@ -135,6 +159,7 @@ export default function Program() {
       <ProgramExplorer />
       <FirstHundredDays />
       <FourYears />
+      <BidangKerja />
 
       {/* ajakan penutup: pita kuning lebar penuh */}
       <section className="pg2-cta">

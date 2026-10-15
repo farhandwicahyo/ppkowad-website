@@ -31,12 +31,48 @@ export const TARGETS_100 = [
   { label: 'Halaman Website', value: '17', caption: 'Website pusat dan 16 wilayah.' },
 ];
 
+// Kalender Kegiatan Program 100 Hari Kerja PP-KOWAD Tahun 2026 (1 Oktober 2026 – 8 Januari 2027)
 export const STAGES_100 = [
-  { time: 'Hari 1–14', text: 'Pembagian tugas, pendataan, ukuran seragam, dan penghubung wilayah.' },
-  { time: 'Hari 15–30', text: '17 KTA pengurus dan pilot anggota, produksi seragam, penjajakan mitra.' },
-  { time: 'Hari 31–60', text: '17 seragam selesai paling lambat hari ke-45, 3 mitra aktif pada hari ke-60.' },
-  { time: 'Hari 61–90', text: 'Konsultasi AD/ART, kegiatan lintas wilayah, dan dukungan anggota.' },
-  { time: 'Hari 91–100', text: 'Evaluasi, rancangan akhir AD/ART, peluncuran website, dan laporan.' },
+  {
+    time: 'Hari 1–14', month: 'Oktober',
+    items: [
+      'Pembagian tugas Pengurus PP-KOWAD Pusat',
+      'Pendataan seluruh anggota PP-KOWAD',
+      'Tersedianya ukuran seragam Pengurus PP-KOWAD Pusat',
+      'Penunjukan penghubung PP-KOWAD Wilayah sebagai pengelola website',
+    ],
+  },
+  {
+    time: 'Hari 15–30', month: 'Oktober',
+    items: [
+      'Terwujudnya 17 KTA Pengurus PP-KOWAD Pusat dan pilot anggota PP-KOWAD Wilayah',
+      'Produksi seragam Pengurus PP-KOWAD Pusat',
+      'Penjajakan ke mitra usaha',
+    ],
+  },
+  {
+    time: 'Hari 31–60', month: 'November',
+    items: [
+      '17 seragam Pengurus PP-KOWAD Pusat selesai',
+      'Terwujud kerja sama dengan 3 mitra',
+    ],
+  },
+  {
+    time: 'Hari 61–90', month: 'Desember',
+    items: [
+      'Konsultasi AD/ART',
+      'Terlaksana kegiatan lintas wilayah dan dukungan',
+    ],
+  },
+  {
+    time: 'Hari 91–100', month: '8 Januari 2027',
+    items: [
+      'Evaluasi kegiatan program 100 hari',
+      'Finalisasi AD/ART',
+      'Peluncuran website PP-KOWAD',
+      'Pembuatan laporan kegiatan program 100 hari PP-KOWAD Pusat',
+    ],
+  },
 ];
 
 export const PLAN_4_YEARS = [
