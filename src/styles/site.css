@@ -2556,24 +2556,17 @@ img,svg{display:block;max-width:100%;}
 .page-hero .eyebrow{ color:var(--teal); }
 @media (max-width:600px){ .page-hero{ min-height:380px; padding:110px 20px 56px; } }
 
-/* ===== baris dokumen (judul di kiri, isi di kanan): tujuan, struktur, atribut, bidang kerja, siklus rapat ===== */
-.dr-section{ padding:40px 24px; background:var(--white); }
-.dr-wrap{ max-width:1180px; margin:0 auto; }
-.dr-row{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:64px; padding:56px 0; align-items:start; }
-.dr-row h2{ font-size:var(--fs-title, 28px); font-weight:700; line-height:1.25; color:var(--navy); }
-.dr-cols{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:40px 48px; }
-.dr-cols--3{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
-.dr-cols h3{ font-size:16px; font-weight:700; line-height:1.4; color:var(--navy); margin-bottom:10px; }
-.dr-cols h3 small{ display:block; margin-bottom:4px; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--teal-dark); }
-.dr-cols p{ font-size:var(--fs-body, 14px); line-height:1.8; color:var(--text-gray); text-align:justify; }
-.dr-list{ list-style:none; display:flex; flex-direction:column; gap:8px; }
-.dr-list li{ position:relative; padding-left:16px; font-size:var(--fs-body, 14px); line-height:1.75; color:var(--text-gray); }
-.dr-list li::before{ content:''; position:absolute; left:0; top:0.72em; width:6px; height:6px; border-radius:50%; background:var(--teal); }
-.dr-cols .dr-note{ grid-column:1 / -1; }
-@media (max-width:900px){
-  .dr-row{ grid-template-columns:1fr; gap:28px; padding:40px 0; }
-  .dr-cols--3{ grid-template-columns:1fr 1fr; }
-}
+/* kartu Ketua Umum: latar biru polos seperti latar foto resmi (#085cb3) */
+.bc-grid .bc-bg{ background:linear-gradient(180deg, #0b63bd 0%, #085cb3 60%, #07509f 100%); }
+.bc-plate .bc-cred{ font-size:11.5px; font-weight:600; line-height:1.35; opacity:0.9; }
+
+/* ===== pita ajakan bergabung (semua halaman kecuali Home): kuning PP-KOWAD, lebar penuh, ramping ===== */
+.join-banner{ padding:30px 24px; background:var(--teal); color:var(--navy); }
+.join-banner-inner{ max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:32px; }
+.join-banner h2{ font-weight:800; line-height:1.1; margin-bottom:4px; }
+.join-banner p{ max-width:560px; line-height:1.55; color:rgba(51,50,26,0.85); }
+.join-banner-btn{ padding:10px 20px; font-size:13px; background:var(--navy); border-color:var(--navy); color:var(--white); flex:none; }
+.join-banner-btn:hover{ background:var(--white); border-color:var(--white); color:var(--navy); }
 @media (max-width:560px){
-  .dr-cols, .dr-cols--3{ grid-template-columns:1fr; }
+  .join-banner-inner{ flex-direction:column; align-items:flex-start; }
 }

@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { PROGRAMS, STAGES_100, PLAN_4_YEARS } from '../data/programs.js';
-import { BIDANG_KERJA } from '../data/organisasi.js';
-
-const Arrow = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-);
 
 // penjelajah program: daftar di kiri menempel saat scroll, panel di kanan; item aktif mengikuti panel yang sedang terlihat
 function ProgramExplorer() {
@@ -118,27 +112,6 @@ function FourYears() {
   );
 }
 
-// empat bidang kerja (ART Pasal 30): judul + butir kegiatan
-function BidangKerja() {
-  return (
-    <section className="dr-section">
-      <div className="dr-wrap">
-        <div className="dr-row">
-          <h2>Bidang Kerja Organisasi</h2>
-          <div className="dr-cols">
-            {BIDANG_KERJA.map((b) => (
-              <div key={b.title}>
-                <h3>{b.title}</h3>
-                <ul className="dr-list">{b.items.map((t) => <li key={t}>{t}</li>)}</ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 export default function Program() {
   return (
     <div className="program-page">
@@ -159,18 +132,6 @@ export default function Program() {
       <ProgramExplorer />
       <FirstHundredDays />
       <FourYears />
-      <BidangKerja />
-
-      {/* ajakan penutup: pita kuning lebar penuh */}
-      <section className="pg2-cta">
-        <div className="pg2-cta-inner">
-          <div>
-            <h2>Ingin berabung bersama kami?</h2>
-            <p>Hubungi pengurus pusat atau ketua wilayah Anda untuk mengikuti kegiatan PP-KOWAD berikutnya.</p>
-          </div>
-          <Link className="pill-btn pg2-cta-btn" to="/contact">Hubungi Kami <Arrow /></Link>
-        </div>
-      </section>
     </div>
   );
 }

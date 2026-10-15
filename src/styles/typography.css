@@ -51,7 +51,7 @@ button, input, textarea, select{ font-family:inherit; }
 .pg3-years h2,
 .pg4-top h2,
 .pg5-aside h2,
-.pg2-cta h2,
+.join-banner h2,
 .pg2-panel h3,
 .ab-values-list + h2{
   font-size:var(--fs-title);
@@ -79,7 +79,7 @@ button, input, textarea, select{ font-family:inherit; }
 .pg5-goal,
 .pg4-goal,
 .pg3-years li p,
-.pg2-cta p,
+.join-banner p,
 .ab-dark-text,
 .ab-phj-item p,
 .ab-value p{

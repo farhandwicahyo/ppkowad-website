@@ -503,3 +503,466 @@
 /* arti keseluruhan diperbesar agar menonjol */
 .ab-logo2-summary{ margin-top:56px; font-size:clamp(17px, 1.6vw, 20px); line-height:1.75; color:var(--white); }
 .ab-logo2-summary strong{ font-size:1.1em; }
+
+/* ===== Makna Logo: logo utama di tengah, unsur lambang mengelilinginya ===== */
+.ab-orbit{
+  --size:min(560px, 86vw);
+  --r:calc(var(--size) * 0.42);
+  --item:clamp(56px, 13vw, 84px);
+  position:relative;
+  width:var(--size);
+  height:var(--size);
+  margin:0 auto;
+}
+.ab-orbit-main{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:calc(var(--size) * 0.5);
+  transform:translate(-50%, -50%);
+}
+.ab-orbit-item{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:var(--item);
+  height:var(--item);
+  margin:calc(var(--item) / -2) 0 0 calc(var(--item) / -2);
+  padding:calc(var(--item) * 0.18);
+  border-radius:50%;
+  background:var(--white);
+  box-shadow:0 0 0 5px rgba(242,196,106,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transform:rotate(var(--a)) translate(var(--r)) rotate(calc(var(--a) * -1));
+}
+.ab-orbit-item img{ width:100%; height:100%; object-fit:contain; }
+.ab-orbit + .ab-logo2-summary{ margin-top:48px; }
+
+/* ===== Makna Logo interaktif: klik unsur -> berputar searah jarum jam ke kanan logo utama, penjelasan muncul ===== */
+.ab-orbit-wrap{ --size:min(560px, 86vw); position:relative; width:100%; }
+.ab-orbit{ --r:calc(var(--size) * 0.42); }
+.ab-orbit-item{
+  border:none;
+  cursor:pointer;
+  font:inherit;
+  transform:rotate(calc(var(--a) + var(--spin, 0deg))) translate(var(--r)) rotate(calc((var(--a) + var(--spin, 0deg)) * -1));
+  transition:transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), box-shadow 0.3s ease, background 0.3s ease;
+}
+.ab-orbit-item:hover{ box-shadow:0 0 0 5px rgba(242,196,106,0.7); }
+.ab-orbit-item.is-active{ background:#FFF3D6; box-shadow:0 0 0 6px var(--teal), 0 0 28px rgba(242,196,106,0.55); }
+.ab-orbit-item:focus-visible{ outline:2px solid var(--teal); outline-offset:6px; }
+
+/* penjelasan: di kanan unsur yang sudah berhenti di sisi kanan logo, muncul setelah putaran selesai */
+.ab-orbit-info{
+  position:absolute;
+  top:50%;
+  left:calc(50% + var(--size) / 2 + 8px);
+  width:min(300px, calc(50% - var(--size) / 2 - 8px));
+  transform:translateY(-50%);
+  pointer-events:none;
+}
+.ab-orbit-info > div{ animation:orbit-info-in 0.5s ease 0.75s both; }
+.ab-orbit-info h4{
+  font-size:clamp(18px, 1.7vw, 22px);
+  font-weight:700;
+  line-height:1.3;
+  margin-bottom:10px;
+  background:linear-gradient(90deg, #F2C46A 0%, #E8A032 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.ab-orbit-info p{ font-size:var(--fs-body, 14px); line-height:1.8; color:rgba(251,251,248,0.9); text-align:justify; }
+@keyframes orbit-info-in{ from{ opacity:0; transform:translateX(-14px); } to{ opacity:1; transform:none; } }
+
+.ab-orbit-hint{ margin-top:18px; text-align:center; font-size:12.5px; letter-spacing:0.02em; color:rgba(251,251,248,0.6); }
+
+/* layar sempit: penjelasan tampil di bawah lingkaran */
+@media (max-width:1180px){
+  .ab-orbit-info{ position:static; width:min(460px, 100%); margin:28px auto 0; transform:none; }
+  .ab-orbit-info > div{ animation-delay:0.6s; }
+}
+@media (prefers-reduced-motion:reduce){
+  .ab-orbit-item{ transition:none; }
+  .ab-orbit-info > div{ animation:none; }
+}
+
+/* ===== Makna Logo dua kolom: orbit logo di kiri, penjelasan di kanan ===== */
+.ab-orbit-wrap{
+  --size:min(520px, 44vw);
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+  gap:56px;
+  align-items:center;
+}
+.ab-orbit-wrap .ab-orbit{ justify-self:center; }
+.ab-orbit-wrap .ab-orbit-info{
+  position:static;
+  width:auto;
+  max-width:480px;
+  margin:0;
+  transform:none;
+  pointer-events:auto;
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.ab-orbit-wrap .ab-orbit-info h4{ font-size:clamp(22px, 2.2vw, 30px); margin-bottom:14px; }
+.ab-orbit-wrap .ab-orbit-info p{ font-size:15px; line-height:1.85; }
+.ab-orbit-wrap .ab-orbit-hint{ margin:0; text-align:left; font-size:15px; line-height:1.8; color:rgba(251,251,248,0.55); }
+@media (max-width:900px){
+  .ab-orbit-wrap{ --size:min(520px, 86vw); grid-template-columns:1fr; gap:32px; }
+  .ab-orbit-wrap .ab-orbit-info{ margin:0 auto; max-width:none; min-height:0; }
+  .ab-orbit-wrap .ab-orbit-hint{ text-align:center; }
+}
+
+/* ===== Makna Logo: awalnya orbit di tengah; saat unsur dipilih orbit bergeser ke kiri dan penjelasan muncul di kanan ===== */
+.ab-orbit-wrap{
+  grid-template-columns:minmax(0, 1fr) minmax(0, 0fr);
+  column-gap:0;
+  transition:grid-template-columns 1.4s cubic-bezier(0.45, 0, 0.25, 1), column-gap 1.4s cubic-bezier(0.45, 0, 0.25, 1);
+}
+.ab-orbit-wrap.is-open{ grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); column-gap:56px; }
+.ab-orbit-stage{ justify-self:center; display:flex; flex-direction:column; align-items:center; }
+.ab-orbit-wrap .ab-orbit-info{ overflow:hidden; min-width:0; min-height:0; }
+.ab-orbit-wrap .ab-orbit-info > div{ animation-duration:0.7s; animation-delay:1.1s; }
+.ab-orbit-wrap .ab-orbit-hint{ text-align:center; margin-top:18px; font-size:12.5px; }
+
+/* putaran searah jarum jam diperlambat */
+.ab-orbit-item{ transition:transform 1.8s cubic-bezier(0.45, 0, 0.25, 1), box-shadow 0.3s ease, background 0.3s ease; }
+
+@media (max-width:900px){
+  .ab-orbit-wrap, .ab-orbit-wrap.is-open{ grid-template-columns:1fr; column-gap:0; row-gap:0; }
+  .ab-orbit-wrap.is-open{ row-gap:28px; }
+  .ab-orbit-wrap .ab-orbit-info > div{ animation-delay:1.2s; }
+}
+@media (prefers-reduced-motion:reduce){
+  .ab-orbit-wrap{ transition:none; }
+}
+
+/* arti keseluruhan hanya tampil saat orbit di tengah; muncul perlahan setelah orbit kembali */
+.ab-orbit-summary{
+  grid-column:1 / -1;
+  width:100%;
+  margin-top:56px;
+  font-size:clamp(17px, 1.6vw, 20px);
+  line-height:1.75;
+  color:var(--white);
+  animation:orbit-info-in 0.7s ease 1.2s both;
+}
+.ab-orbit-summary strong{ font-size:1.1em; }
+@media (prefers-reduced-motion:reduce){ .ab-orbit-summary{ animation:none; } }
+
+/* arti keseluruhan tepat di bawah judul "Makna Logo", di atas lingkaran logo */
+.ab-orbit-summary{ margin:0 0 48px; }
+
+/* arti keseluruhan: lebih besar dan rata tengah */
+.ab-orbit-summary{
+  max-width:980px;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:clamp(20px, 2.2vw, 28px);
+  font-weight:500;
+  line-height:1.6;
+  text-align:center;
+}
+.ab-orbit-summary strong{ font-size:1em; font-weight:800; }
+
+/* ===== Makna Logo setengah-setengah: orbit di kiri, arti keseluruhan / penjelasan unsur di kanan ===== */
+.ab-orbit-wrap, .ab-orbit-wrap.is-open{
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+  column-gap:56px;
+  transition:none;
+}
+.ab-orbit-wrap .ab-orbit-info{ overflow:visible; min-height:0; max-width:none; }
+.ab-orbit-wrap .ab-orbit-summary{
+  grid-column:auto;
+  max-width:540px;
+  margin:0;
+  font-size:clamp(18px, 1.8vw, 22px);
+  line-height:1.75;
+  font-weight:400;
+  text-align:justify;
+  color:var(--white);
+  animation:orbit-info-in 0.6s ease both;
+}
+.ab-orbit-wrap .ab-orbit-summary .ab-logo-summary{ margin:0; font-size:inherit; line-height:inherit; text-align:justify; color:inherit; }
+.ab-orbit-wrap .ab-orbit-summary strong{ color:var(--teal); font-weight:800; }
+.ab-orbit-wrap .ab-orbit-hint{ margin-top:22px; text-align:left; font-size:12.5px; color:rgba(251,251,248,0.55); }
+.ab-orbit-wrap .ab-orbit-detail{ max-width:540px; animation:orbit-info-in 0.7s ease 1.1s both; }
+@media (max-width:900px){
+  .ab-orbit-wrap, .ab-orbit-wrap.is-open{ grid-template-columns:1fr; row-gap:32px; column-gap:0; }
+  .ab-orbit-wrap .ab-orbit-summary, .ab-orbit-wrap .ab-orbit-detail{ max-width:none; }
+}
+
+/* "Berawal dari Tekad Bersama" + paragraf: satu layar penuh, isinya di tengah (padding atas section 160px sudah dihitung) */
+.ab-dark-inner > .ab-dark-row:first-child{
+  min-height:calc(100vh - 160px);
+  justify-content:center;
+}
+.ab-dark-inner > .ab-dark-row:first-child .ab-dark-text{ font-size:clamp(15px, 1.5vw, 18px); max-width:640px; }
+@media (max-width:560px){
+  .ab-dark-inner > .ab-dark-row:first-child{ min-height:calc(100vh - 64px); }
+}
+
+/* Visi dan Misi: satu layar penuh, isinya di tengah (garis lengkung di atasnya, 120px, sudah dihitung) */
+.ab-dark-row.ab-vm3{
+  min-height:calc(100vh - 120px);
+  justify-content:center;
+  margin-top:0;
+}
+.ab-vm3-visi{ margin-bottom:clamp(48px, 9vh, 96px); }
+
+/* kalimat visi diperbesar; di desktop tetap dua baris (baris pertama tidak dipatahkan) dan boleh melebihi lebar kolom */
+.ab-vm3-visi{ font-size:clamp(24px, 6vw, 34px); line-height:1.4; }
+@media (min-width:901px){
+  .ab-vm3-visi{
+    width:96vw;
+    max-width:none;
+    font-size:min(2.6vw, 42px);
+    line-height:1.35;
+    white-space:nowrap;
+  }
+}
+
+/* ===== misi redesign: angka besar berkontur emas, kata kerja putih, kolom bergantian naik-turun ===== */
+.ab-vm4{ width:min(1180px, 92vw); max-width:none; gap:48px; align-items:start; text-align:left; }
+.ab-vm4-item:nth-child(even){ margin-top:56px; }
+.ab-vm4-no{
+  display:block;
+  font-size:clamp(56px, 6vw, 88px);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-0.02em;
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(242,196,106,0.8);
+  margin-bottom:-0.18em;
+}
+.ab-vm4-item h4{
+  position:relative;
+  background:none;
+  -webkit-text-fill-color:currentColor;
+  color:var(--white);
+  font-size:clamp(20px, 1.9vw, 26px);
+  font-weight:700;
+  margin-bottom:12px;
+}
+.ab-vm4-item p{ font-size:var(--fs-body, 14px); line-height:1.8; color:rgba(251,251,248,0.8); }
+@media (max-width:900px){
+  .ab-vm4{ gap:40px 32px; }
+  .ab-vm4-item:nth-child(even){ margin-top:0; }
+}
+
+/* angka misi: isi warna kuning PP-KOWAD yang diburamkan, ditimpa tulisan di atasnya */
+.ab-vm4-no{
+  color:rgba(242, 196, 106, 0.28);
+  -webkit-text-stroke:0;
+  filter:blur(1.5px);
+  margin-bottom:-0.3em;
+}
+.ab-vm4-item h4, .ab-vm4-item p{ position:relative; z-index:1; }
+
+/* misi: tulisan di pojok kiri atas kolom (angka jadi latar di belakangnya), teks rata kanan-kiri */
+.ab-vm4-item{ position:relative; min-height:150px; text-align:left; }
+.ab-vm4-no{
+  position:absolute;
+  top:-0.18em;
+  left:-0.06em;
+  margin:0;
+  z-index:0;
+}
+.ab-vm4-item h4{ margin-top:0; text-align:left; }
+.ab-vm4-item p{ text-align:justify; }
+
+/* teks misi diturunkan supaya angka di belakangnya terlihat jelas, hanya bagian bawah angka yang ditimpa tulisan */
+.ab-vm4-item{ padding-top:clamp(40px, 4.2vw, 62px); min-height:190px; }
+
+/* misi: keempat kolom sejajar dan sama tinggi (zig-zag dihapus) */
+.ab-vm4{ align-items:stretch; }
+.ab-vm4-item, .ab-vm4-item:nth-child(even){ margin-top:0; height:100%; }
+
+/* ===== bagian gelap dipecah: [berawal + visi misi] -> jejak langkah -> [makna logo] ===== */
+.ab-dark-section.ab-dark-top{ clip-path:none; padding-bottom:40px; }
+.ab-dark-section.ab-dark-bottom{ padding-top:40px; }
+.ab-dark-bottom .ab-dark-row.ab-logo2{ margin-top:0; }
+
+/* ===== satu latar untuk seluruh area gelap (berawal, visi misi, jejak langkah, makna logo): tidak ada tepi antarsection ===== */
+.ab-dark-wrap{ position:relative; isolation:isolate; padding-bottom:190px; }
+.ab-dark-wrap::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  clip-path:polygon(0 0, 100% 0, 100% 100%, 59% calc(100% - 90px), 46% calc(100% - 90px), 0 100%);
+  background:
+    radial-gradient(ellipse 520px 300px at 12% 500px, rgba(242,196,106,0.24) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 90% 1300px, rgba(242,196,106,0.2) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 10% 2100px, rgba(242,196,106,0.22) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 90% 2900px, rgba(242,196,106,0.18) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 12% 3700px, rgba(242,196,106,0.22) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 90% 4500px, rgba(242,196,106,0.2) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 10% 5300px, rgba(242,196,106,0.22) 0%, transparent 100%),
+    radial-gradient(ellipse 520px 300px at 90% 6100px, rgba(242,196,106,0.18) 0%, transparent 100%),
+    #12120a;
+}
+.ab-dark-wrap > .ab-dark-section, .ab-dark-wrap > .ab-tl3{ background:none; clip-path:none; position:relative; }
+.ab-dark-wrap > .ab-dark-section.ab-dark-bottom{ padding-bottom:0; }
+@media (max-width:820px){
+  .ab-dark-wrap{ padding-bottom:130px; }
+  .ab-dark-wrap::before{ clip-path:polygon(0 0, 100% 0, 100% 100%, 59% calc(100% - 50px), 46% calc(100% - 50px), 0 100%); }
+  .ab-dark-wrap > .ab-dark-section.ab-dark-bottom{ padding-bottom:0; }
+}
+
+/* ===== Jejak Langkah: daftar vertikal, hanya tahun; tahun besar kuning diburamkan ditimpa tulisan, baris bergantian kiri-kanan ===== */
+.ab-tl3{
+  position:relative;
+  padding:90px 24px 120px;
+  color:var(--white);
+}
+.ab-tl3-title{ margin-bottom:56px; }
+.ab-tl3-list{
+  list-style:none;
+  width:min(1000px, 100%);
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:34px;
+}
+.ab-tl3-item{ position:relative; width:min(620px, 100%); }
+.ab-tl3-item:nth-child(even){ align-self:flex-end; }
+.ab-tl3-year{
+  position:absolute;
+  top:0;
+  left:-0.04em;
+  font-size:clamp(84px, 11vw, 150px);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-0.04em;
+  color:rgba(242, 196, 106, 0.26);
+  filter:blur(1.2px);
+  pointer-events:none;
+  user-select:none;
+}
+.ab-tl3-body{ position:relative; z-index:1; padding-top:clamp(52px, 7vw, 92px); }
+.ab-tl3-item h4{ font-size:clamp(18px, 1.7vw, 22px); font-weight:700; line-height:1.35; color:var(--white); margin-bottom:8px; }
+.ab-tl3-item p{ font-size:var(--fs-body, 14px); line-height:1.8; color:rgba(251,251,248,0.8); text-align:justify; }
+@media (max-width:700px){
+  .ab-tl3-item:nth-child(even){ align-self:flex-start; }
+  .ab-tl3-list{ gap:26px; }
+}
+
+
+/* judul "Perjalanan PP KOWAD" diperbesar */
+.ab-tl3-title{ font-size:clamp(36px, 5.2vw, 68px); font-weight:700; line-height:1.1; letter-spacing:-0.01em; margin-bottom:72px; }
+
+/* ===== jalur titik-titik Perjalanan PP KOWAD: tergambar mengikuti scroll, ujungnya ditandai silang ===== */
+.ab-tl3-stage{ position:relative; width:min(1000px, 100%); margin:0 auto; }
+.ab-tl3-stage .ab-tl3-list{ width:100%; }
+.ab-trail{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+  z-index:0;
+}
+.ab-trail path{ fill:none; }
+.ab-trail-line{
+  stroke:rgba(242,196,106,0.8);
+  stroke-width:4.5;
+  stroke-linecap:round;
+  stroke-dasharray:3 15;
+}
+.ab-trail-tip path{ fill:var(--teal); stroke:none; }
+.ab-trail-tip .fold{ fill:rgba(18,18,10,0.3); } /* lipatan kertas: setengah sayap dibuat lebih gelap */
+.ab-trail-tip{ filter:drop-shadow(0 3px 6px rgba(0,0,0,0.45)); }
+/* pin lokasi ala peta: jatuh dari atas saat jalur sampai di ujung */
+.ab-trail-end .pin-body{ fill:var(--teal); stroke:#33321A; stroke-width:1.5; stroke-linejoin:round; }
+.ab-trail-end .pin-dot{ fill:#33321A; }
+.ab-trail-end .pin-shadow{ fill:rgba(0,0,0,0.4); }
+.ab-trail-end .pin{ animation:pin-drop 0.55s cubic-bezier(0.3, 1.4, 0.5, 1) both; filter:drop-shadow(0 3px 4px rgba(0,0,0,0.4)); }
+@keyframes pin-drop{ from{ opacity:0; transform:translateY(-22px); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){ .ab-trail-end .pin{ animation:none; } }
+
+/* tulisan tetap di atas jalur */
+.ab-tl3-item{ z-index:1; }
+
+
+/* ===== Struktur Organisasi: bagan Pusat / Wilayah / Sub Wilayah ===== */
+.oc-wrap{ position:relative; z-index:1; text-align:left; --gap:40px; --line:rgba(51,50,26,0.7); }
+.oc{ position:relative; display:flex; flex-direction:column; align-items:center; gap:var(--gap); }
+
+.oc-node{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:230px;
+  background:var(--white);
+  border:1.5px solid var(--navy);
+  border-radius:3px;
+  box-shadow:4px 4px 0 rgba(51,50,26,0.16);
+  text-align:center;
+}
+.oc-node strong{ display:block; padding:12px 10px; font-size:12.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; line-height:1.4; color:var(--navy); }
+.oc-node span{ display:block; padding:8px 10px; border-top:1.5px solid var(--navy); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-gray); }
+.oc-node--root{ max-width:250px; background:var(--navy); }
+.oc-node--root strong{ color:var(--teal); }
+.oc-node--root span{ color:rgba(251,251,248,0.85); border-top-color:rgba(251,251,248,0.35); }
+
+/* baris atas: pimpinan + pengawas/penasihat dengan garis putus-putus */
+.oc-top{ position:relative; width:100%; display:flex; justify-content:center; }
+.oc-top::after{ content:''; position:absolute; left:50%; top:100%; width:2px; height:var(--gap); margin-left:-1px; background:var(--line); }
+.oc-side{ position:absolute; left:calc(50% + 125px + 48px); top:50%; width:150px; transform:translateY(-50%); }
+.oc-side::before{ content:''; position:absolute; right:100%; top:50%; width:48px; border-top:3px dotted var(--teal-dark); }
+
+/* bendahara kiri, sekretaris kanan, dihubungkan garis mendatar; batang tengah melewatinya */
+.oc-pair{ position:relative; width:100%; display:grid; grid-template-columns:1fr 100px 1fr; align-items:center; }
+.oc-pair .oc-node:first-child{ justify-self:end; }
+.oc-pair .oc-node:last-child{ justify-self:start; }
+.oc-pair::before{ content:''; position:absolute; left:calc(50% - 70px); right:calc(50% - 70px); top:50%; height:2px; margin-top:-1px; background:var(--line); }
+.oc-pair::after{ content:''; position:absolute; left:50%; top:0; bottom:calc(var(--gap) * -1); width:2px; margin-left:-1px; background:var(--line); }
+
+/* ketua bidang/seksi/urusan di bawah garis bus; batang tengah lanjut ke tingkat di bawahnya */
+.oc-lower{ position:relative; width:100%; display:flex; flex-direction:column; align-items:center; gap:var(--gap); }
+.oc-lower.has-trunk::before{ content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; margin-left:-1px; background:var(--line); }
+.oc-kids{ position:relative; width:100%; display:grid; grid-template-columns:repeat(var(--n), minmax(0, 1fr)); }
+.oc-kids::before{ content:''; position:absolute; top:calc(var(--gap) * -0.5); left:calc(50% / var(--n)); right:calc(50% / var(--n)); height:2px; margin-top:-1px; background:var(--line); }
+.oc-kid{ position:relative; display:flex; justify-content:center; padding:0 9px; }
+.oc-kid::before{ content:''; position:absolute; left:50%; top:calc(var(--gap) * -0.5); height:calc(var(--gap) * 0.5); width:2px; margin-left:-1px; background:var(--line); }
+
+
+
+@media (max-width:760px){
+  .oc-wrap{ --gap:26px; }
+  .oc-top::after, .oc-pair::before, .oc-pair::after, .oc-kids::before, .oc-kid::before, .oc-lower.has-trunk::before, .oc-side::before, .oc-gap{ display:none; }
+  .oc-top{ flex-direction:column; align-items:center; gap:18px; }
+  .oc-side{ position:static; transform:none; width:150px; }
+  .oc-pair{ grid-template-columns:1fr; row-gap:var(--gap); justify-items:center; }
+  .oc-pair .oc-node:first-child, .oc-pair .oc-node:last-child{ justify-self:center; }
+  .oc-kids{ grid-template-columns:repeat(2, minmax(0, 1fr)); row-gap:var(--gap); }
+}
+
+/* satu pohon: label tingkat di kiri, pemisah tingkat berupa garis mendatar putus-putus yang dilewati batang tengah */
+.rg-block.oc-block{ max-width:1040px; margin-top:150px; }
+.oc > .oc-level-label{ position:absolute; left:0; top:0; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal-dark); }
+@media (max-width:760px){
+  .rg-block.oc-block{ margin-top:100px; }
+}
+
+.oc-lower.has-trunk::after{ content:''; position:absolute; left:50%; top:100%; width:2px; height:var(--gap); margin-left:-1px; background:var(--line); }
+
+/* pemisah tingkat: garis mendatar putus-putus, batang tengah menembusnya lalu lanjut ke puncak tingkat berikutnya */
+.oc-sep{ position:relative; width:100%; height:36px; }
+.oc-sep::before{ content:''; position:absolute; left:0; right:0; top:50%; border-top:2px dashed rgba(51,50,26,0.4); }
+.oc-sep i{ position:absolute; left:50%; top:0; bottom:0; width:2px; margin-left:-1px; background:var(--line); }
+.oc-sep::after{ content:''; position:absolute; left:50%; top:100%; width:2px; height:var(--gap); margin-left:-1px; background:var(--line); }
+.oc-sep span{ position:absolute; left:0; top:calc(50% + 10px); font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal-dark); }
+
+
+@media (max-width:760px){
+  .oc-sep i, .oc-sep::after, .oc-lower.has-trunk::after{ display:none; }
+}

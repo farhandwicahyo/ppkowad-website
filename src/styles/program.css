@@ -142,12 +142,6 @@
 .pg4-stages p{ font-size:14.5px; line-height:1.7; color:var(--text-gray); }
 
 /* ---- ajakan penutup: pita kuning PP-KOWAD lebar penuh ---- */
-.pg2-cta{ padding:70px 24px; background:var(--teal); color:var(--navy); }
-.pg2-cta-inner{ max-width:1180px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:32px; }
-.pg2-cta h2{ font-size:clamp(26px, 3.2vw, 40px); font-weight:800; line-height:1.1; margin-bottom:10px; }
-.pg2-cta p{ font-size:15px; line-height:1.7; max-width:560px; color:rgba(51,50,26,0.85); }
-.pg2-cta-btn{ background:var(--navy); border-color:var(--navy); color:var(--white); }
-.pg2-cta-btn:hover{ background:var(--white); border-color:var(--white); color:var(--navy); }
 
 @media (max-width:1000px){
   .pg4-top{ grid-template-columns:1fr; gap:24px; }
@@ -159,7 +153,6 @@
 @media (max-width:560px){
   .pg4-stages{ grid-template-columns:1fr; }
   .pg4-stages li + li{ border-left:none; padding-left:0; border-top:1px solid var(--border-soft); }
-  .pg2-cta-inner{ flex-direction:column; align-items:flex-start; }
 }
 
 /* ======================= revisi: hero kalimat besar, pita CTA ramping, tanpa garis berlebih ======================= */
@@ -192,10 +185,6 @@
 .pg3-years li strong{ color:var(--teal); font-size:clamp(30px, 3.2vw, 44px); font-weight:300; letter-spacing:-0.01em; }
 
 /* pita CTA lebih ramping */
-.pg2-cta{ padding:30px 24px; }
-.pg2-cta h2{ font-size:clamp(20px, 2.2vw, 26px); margin-bottom:4px; }
-.pg2-cta p{ font-size:14px; line-height:1.55; }
-.pg2-cta-btn{ padding:10px 20px; font-size:13px; }
 
 @media (max-width:1000px){
   .pg4-stages li:nth-child(odd){ padding-left:0; }

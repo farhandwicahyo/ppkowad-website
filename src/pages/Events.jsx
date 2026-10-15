@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero.jsx';
 import { EVENTS } from '../data/events.js';
-import { SIKLUS } from '../data/organisasi.js';
 
 
 const MONTHS = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
@@ -119,22 +118,6 @@ export default function Events() {
               <h4>{selected.title}</h4>
               <p>{formatRange(selected)}</p>
               <p>{selected.desc}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="dr-section">
-        <div className="dr-wrap">
-          <div className="dr-row">
-            <h2>Siklus Musyawarah dan Rapat</h2>
-            <div className="dr-cols">
-              {SIKLUS.map((x) => (
-                <div key={x.name}>
-                  <h3><small>{x.every}</small>{x.name}</h3>
-                  <p>{x.text}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>

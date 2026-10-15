@@ -1,4 +1,4 @@
-// Program Kerja PP-KOWAD 2026–2030 ("Peace, Happy, and Joy").
+// Program Kerja PP-KOWAD 2026–2030 ("Peace, Happy, and Joy"): 4 program kerja ditambah 3 program penguatan anggota.
 // Dipakai oleh halaman Program, carousel & foto program di Home, dan footer.
 export const PROGRAMS = [
   {
@@ -7,7 +7,7 @@ export const PROGRAMS = [
     text: 'Satu kegiatan bulanan di setiap wilayah: hobi, olahraga, seni, cerita pengabdian, atau perayaan sederhana. Bisa diadakan secara lokal, dalam kelompok kecil, maupun melalui WA.',
   },
   {
-    title: 'Sahabat Kowad',
+    title: 'Sahabat Purnawirawan Kowad',
     img: 'pengajian-portrait.jpg',
     text: 'Sapaan dan perhatian bagi anggota yang tinggal sendiri, sedang berduka, sakit, atau sulit bepergian, agar setiap anggota tetap merasa diperhatikan.',
   },
@@ -20,6 +20,21 @@ export const PROGRAMS = [
     title: 'HUT Tahunan dan Munas',
     img: 'munas-podium.jpg',
     text: 'Setiap September menjadi momen silaturahmi, karya anggota, apresiasi, dan laporan singkat. Wilayah dapat merayakan secara lokal atau daring, dan Munas empat tahunan berikutnya digelar September 2030.',
+  },
+  {
+    title: 'Pendidikan dan Pelatihan',
+    img: 'munas-plaque.jpg',
+    text: 'Pendidikan, latihan, dan kegiatan kewirausahaan bagi anggota, dijalankan bersama TNI, swasta, dan instansi terkait untuk menambah pengetahuan dan keterampilan.',
+  },
+  {
+    title: 'Bakti Sosial dan Kepedulian',
+    img: 'pengajian-group.jpg',
+    text: 'Bakti sosial dan kegiatan sosial bersama organisasi dan instansi terkait, serta bantuan sesuai kemampuan bagi anggota yang mengalami musibah.',
+  },
+  {
+    title: 'Pemberdayaan Ekonomi',
+    img: 'hut-ballroom.jpg',
+    text: 'Menggali sumber daya dan dana untuk mengembangkan usaha anggota, serta bekerja sama dengan dinas terkait membuka lapangan usaha demi kesejahteraan anggota.',
   },
 ];
 
@@ -34,7 +49,7 @@ export const TARGETS_100 = [
 // Kalender Kegiatan Program 100 Hari Kerja PP-KOWAD Tahun 2026 (1 Oktober 2026 – 8 Januari 2027)
 export const STAGES_100 = [
   {
-    time: 'Hari 1–14', month: 'Oktober',
+    time: 'Hari 1–14', month: 'Oktober', summary: 'Pembagian tugas & pendataan anggota',
     items: [
       'Pembagian tugas Pengurus PP-KOWAD Pusat',
       'Pendataan seluruh anggota PP-KOWAD',
@@ -43,7 +58,7 @@ export const STAGES_100 = [
     ],
   },
   {
-    time: 'Hari 15–30', month: 'Oktober',
+    time: 'Hari 15–30', month: 'Oktober', summary: 'KTA pengurus & produksi seragam',
     items: [
       'Terwujudnya 17 KTA Pengurus PP-KOWAD Pusat dan pilot anggota PP-KOWAD Wilayah',
       'Produksi seragam Pengurus PP-KOWAD Pusat',
@@ -51,21 +66,21 @@ export const STAGES_100 = [
     ],
   },
   {
-    time: 'Hari 31–60', month: 'November',
+    time: 'Hari 31–60', month: 'November', summary: 'Seragam selesai & kerja sama 3 mitra',
     items: [
       '17 seragam Pengurus PP-KOWAD Pusat selesai',
       'Terwujud kerja sama dengan 3 mitra',
     ],
   },
   {
-    time: 'Hari 61–90', month: 'Desember',
+    time: 'Hari 61–90', month: 'Desember', summary: 'Konsultasi AD/ART & lintas wilayah',
     items: [
       'Konsultasi AD/ART',
       'Terlaksana kegiatan lintas wilayah dan dukungan',
     ],
   },
   {
-    time: 'Hari 91–100', month: '8 Januari 2027',
+    time: 'Hari 91–100', month: '8 Januari 2027', summary: 'Evaluasi, AD/ART & peluncuran website',
     items: [
       'Evaluasi kegiatan program 100 hari',
       'Finalisasi AD/ART',

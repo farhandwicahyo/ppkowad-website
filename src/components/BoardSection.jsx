@@ -1,8 +1,8 @@
 // img: nama file foto di public/assets. Pakai PNG tanpa latar (cutout) supaya kepala tampil keluar dari kartu; null = siluet
 const KETUA_UMUM = [
-  { img: null, period: '2014 - 2021', rank: 'Brigjen TNI (K) Purn', name: 'Yulia Ganawati' },
-  { img: null, period: '2022 - 2026', rank: 'Brigjen TNI (K) Purn', name: 'Hastuti Sari Sukapti, S.H.' },
-  { img: 'dian-andriani.png', period: '2026 - 2030', rank: 'Mayjen TNI (K) Purn', name: 'Dr. dr. Dian Andriani Ratna Dewi', credentials: 'Sp.KK, M.Biomed, M.A.R.S., FINSDV, FAADV', current: true },
+  { img: 'gana.png', period: '2014 - 2021', rank: 'Brigjen TNI (K) Purn', name: 'Yulia Ganawati' },
+  { img: 'marati-sari.png', period: '2022 - 2026', rank: 'Brigjen TNI (K) Purn', name: 'Hastuti Sari Sukapti, S.H.' },
+  { img: 'dian-andriani.png', period: '2026 - 2030', rank: 'Mayjen TNI (K) Purn', name: 'Dr. Dr. dr. Dian Andriani RD', credentials: 'SpDVE, M.Biomed, MARS, SH, MH', current: true },
 ];
 
 export default function BoardSection({ children }) {
@@ -20,6 +20,7 @@ export default function BoardSection({ children }) {
               )}
               <div className="bc-plate">
                 <h3>{k.name}</h3>
+                {k.credentials && <p className="bc-cred">{k.credentials}</p>}
                 <p>{k.rank}</p>
                 <span>Ketua Umum ke-{i + 1} · {k.period}{k.current ? ' · Menjabat' : ''}</span>
               </div>

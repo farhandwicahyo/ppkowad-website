@@ -6,7 +6,7 @@ const WA_NUMBER = '6285710116209';
 const INFO = [
   {
     label: 'Alamat',
-    value: 'Jl. Matraman Raya No. 114, RT 04/RW 03, Kel. Kebon Manggis, Kec. Matraman, Jakarta Timur 13150',
+    value: 'Jl. Matraman Raya No. 114–116, RT.4/RW.3 Kebon Manggis, Kecamatan Matraman, Kota Jakarta Timur, DKI Jakarta 13150.',
     icon: (<><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></>),
   },
   {
@@ -21,7 +21,7 @@ const INFO = [
   },
   {
     label: 'Email',
-    value: 'PP KOWAD@gmail.com',
+    value: 'ppkowad.pusat@gmail.com',
     icon: (<><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></>),
   },
   {
